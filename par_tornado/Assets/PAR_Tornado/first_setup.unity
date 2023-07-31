@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731716, g: 0.13414738, b: 0.121078566, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -590,6 +590,7 @@ GameObject:
   - component: {fileID: 1367586711}
   - component: {fileID: 1367586710}
   - component: {fileID: 1367586713}
+  - component: {fileID: 1367586714}
   m_Layer: 0
   m_Name: AR Session Origin
   m_TagString: Untagged
@@ -609,7 +610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dea56a9eaadd1c439095de4f9a371cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SerializedLibrary: {fileID: 11400000, guid: 0d3237457adc31a408d900d2308cf859,
+  m_SerializedLibrary: {fileID: 11400000, guid: 3dae2c9f3524b014ea184b84affead9a,
     type: 2}
   m_MaxNumberOfMovingImages: 1
   m_TrackedImagePrefab: {fileID: 1659654227719285503, guid: fba922df3efe84b3bae34cc7a0f5f183,
@@ -655,6 +656,59 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa52a92ec58f3404a84f878359b72eeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1367586714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367586708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dafe147b8bb45643a657bd4baf9c968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PrefabsList:
+  - imageGuid: bcc68b17-70f1-4064-a972-9b15ae5cd64d
+    imagePrefab: {fileID: 3228404197699840367, guid: 7a58eed82a2d96c479013767c44d6f9a,
+      type: 3}
+  - imageGuid: b7291711-96ad-412a-817c-1524cce25e32
+    imagePrefab: {fileID: 3228404197699840367, guid: 7a58eed82a2d96c479013767c44d6f9a,
+      type: 3}
+  - imageGuid: 3d6f1170-5802-4565-9f2f-f8f1eb4238a7
+    imagePrefab: {fileID: 3228404197699840367, guid: 7a58eed82a2d96c479013767c44d6f9a,
+      type: 3}
+  - imageGuid: 74797156-74cb-406f-8e45-035a3fb2cffd
+    imagePrefab: {fileID: 3228404197699840367, guid: 7a58eed82a2d96c479013767c44d6f9a,
+      type: 3}
+  - imageGuid: 3875f226-1466-4c23-8857-7cb16444f3ca
+    imagePrefab: {fileID: 3228404197699840367, guid: 7a58eed82a2d96c479013767c44d6f9a,
+      type: 3}
+  - imageGuid: fa98b572-5396-4565-a37d-23618ebbd2ce
+    imagePrefab: {fileID: 3228404197699840367, guid: 7a58eed82a2d96c479013767c44d6f9a,
+      type: 3}
+  - imageGuid: 5b7f99b1-f64f-4420-9750-1dc11955f970
+    imagePrefab: {fileID: 3228404197699840367, guid: 7a58eed82a2d96c479013767c44d6f9a,
+      type: 3}
+  - imageGuid: b5e47cca-87f3-421f-88de-95c8aec00087
+    imagePrefab: {fileID: 3228404197699840367, guid: 7a58eed82a2d96c479013767c44d6f9a,
+      type: 3}
+  - imageGuid: e8a9f9b7-8782-48ad-aa13-8d7f996f52ad
+    imagePrefab: {fileID: 3228404197699840367, guid: 7a58eed82a2d96c479013767c44d6f9a,
+      type: 3}
+  - imageGuid: 30d03092-cdda-478c-a866-c1c0a7d54c1f
+    imagePrefab: {fileID: 3228404197699840367, guid: 7a58eed82a2d96c479013767c44d6f9a,
+      type: 3}
+  - imageGuid: 6223096b-9c94-4a8e-b466-013be9a8daeb
+    imagePrefab: {fileID: 3228404197699840367, guid: 7a58eed82a2d96c479013767c44d6f9a,
+      type: 3}
+  - imageGuid: 4f20233b-676c-4854-9883-4451c025b887
+    imagePrefab: {fileID: 3228404197699840367, guid: 7a58eed82a2d96c479013767c44d6f9a,
+      type: 3}
+  - imageGuid: 5299c8e0-4aea-4397-a93a-7a4ced01945d
+    imagePrefab: {fileID: 3228404197699840367, guid: 7a58eed82a2d96c479013767c44d6f9a,
+      type: 3}
+  m_ImageLibrary: {fileID: 11400000, guid: 0d3237457adc31a408d900d2308cf859, type: 2}
 --- !u!1 &1403727093 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2993600955326180355, guid: b80ebbc637c6d423bbf0693c865cd14b,
