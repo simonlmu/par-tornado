@@ -1,0 +1,149 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 848409ee8ba454f42a5ddff137688a27, type: 3}
+  m_Name: ReferenceImageLibrary
+  m_EditorClassIdentifier: 
+  m_GuidLow: 4818340263733167525
+  m_GuidHigh: 14541060999558679941
+  m_DataStore:
+    m_Storage: []
+  m_Images:
+  - m_SerializedGuid:
+      m_GuidLow: 4639957699655011095
+      m_GuidHigh: 5608772288693105321
+    m_SerializedTextureGuid:
+      m_GuidLow: 6662161428833494408
+      m_GuidHigh: 14790930091816602904
+    m_Size: {x: 0.12, y: 0.10341708}
+    m_SpecifySize: 1
+    m_Name: camera
+    m_Texture: {fileID: 2800000, guid: 99ede588c0855c74184d5d848df043cd, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 4695731234333595409
+      m_GuidHigh: 3629587716113792129
+    m_SerializedTextureGuid:
+      m_GuidLow: 3626618797759101258
+      m_GuidHigh: 11212603455476772746
+    m_Size: {x: 0.05, y: 0.046062272}
+    m_SpecifySize: 1
+    m_Name: nokia
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5000499727908671856
+      m_GuidHigh: 12049454384174083999
+    m_SerializedTextureGuid:
+      m_GuidLow: 14818062458848190312
+      m_GuidHigh: 13169816075810512890
+    m_Size: {x: 0.069565214, y: 0.12}
+    m_SpecifySize: 1
+    m_Name: adapter
+    m_Texture: {fileID: 2800000, guid: ff329f68554bcda4fa1feabbf195c4b6, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 4643058158023569750
+      m_GuidHigh: 18289032596937721230
+    m_SerializedTextureGuid:
+      m_GuidLow: 15849324440589643867
+      m_GuidHigh: 3670667074478043353
+    m_Size: {x: 0.05, y: 0.05019405}
+    m_SpecifySize: 1
+    m_Name: chip
+    m_Texture: {fileID: 2800000, guid: fb43305b1c9adbf4d970fc9641d4f032, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5486251200333869606
+      m_GuidHigh: 14624107614267266952
+    m_SerializedTextureGuid:
+      m_GuidLow: 12395240247999400667
+      m_GuidHigh: 18379736732066279849
+    m_Size: {x: 0.1, y: 0.10022831}
+    m_SpecifySize: 1
+    m_Name: dart
+    m_Texture: {fileID: 2800000, guid: 2fa10adbbd55ac04a97102842df111ff, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5000494869179315570
+      m_GuidHigh: 14903180337111858595
+    m_SerializedTextureGuid:
+      m_GuidLow: 14768607422142985453
+      m_GuidHigh: 2220825045524891146
+    m_Size: {x: 0.18, y: 0.12370949}
+    m_SpecifySize: 1
+    m_Name: grafikkarte_2
+    m_Texture: {fileID: 2800000, guid: f807b4eda233ccf40a46cdca9cf4d11e, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 4909194414531778993
+      m_GuidHigh: 8140631370551349399
+    m_SerializedTextureGuid:
+      m_GuidLow: 13138180151647961086
+      m_GuidHigh: 4534491492805071960
+    m_Size: {x: 0.2, y: 0.11970714}
+    m_SpecifySize: 1
+    m_Name: klavier
+    m_Texture: {fileID: 2800000, guid: 26107ffe313db6545854ade9fcbfed3e, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 4764676411579727050
+      m_GuidHigh: 9727987052042378888
+    m_SerializedTextureGuid:
+      m_GuidLow: 16907847820568884387
+      m_GuidHigh: 9724078688284331194
+    m_Size: {x: 0.17, y: 0.16328947}
+    m_SpecifySize: 1
+    m_Name: licht
+    m_Texture: {fileID: 2800000, guid: dd5ef4a3be02eaa4ba4c22ef0bdef286, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5236990938020706743
+      m_GuidHigh: 12489167421712438186
+    m_SerializedTextureGuid:
+      m_GuidLow: 14781976939830875210
+      m_GuidHigh: 13127702376519515145
+    m_Size: {x: 0.10448474, y: 0.15}
+    m_SpecifySize: 1
+    m_Name: platine
+    m_Texture: {fileID: 2800000, guid: 60a2944a21b5cd24093c7f05c2f72eb6, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5155722010437890194
+      m_GuidHigh: 2255412429875930792
+    m_SerializedTextureGuid:
+      m_GuidLow: 8828428062589091359
+      m_GuidHigh: 1011960810717495833
+    m_Size: {x: 0.11980729, y: 0.15}
+    m_SpecifySize: 1
+    m_Name: stift_1
+    m_Texture: {fileID: 2800000, guid: 43b67e1fe08c7a8419c26ee9fe340b0e, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5372403566615136619
+      m_GuidHigh: 16995081863506781876
+    m_SerializedTextureGuid:
+      m_GuidLow: 1892764529631495907
+      m_GuidHigh: 9296508592320885737
+    m_Size: {x: 0.12, y: 0.10521428}
+    m_SpecifySize: 1
+    m_Name: uhr_1
+    m_Texture: {fileID: 2800000, guid: b82506e3734f1a44e933a7484fd50381, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5211904383656141627
+      m_GuidHigh: 9779608098762425240
+    m_SerializedTextureGuid:
+      m_GuidLow: 2635916801332943230
+      m_GuidHigh: 1482183786911943592
+    m_Size: {x: 0.8, y: 0.7886121}
+    m_SpecifySize: 1
+    m_Name: wecker
+    m_Texture: {fileID: 2800000, guid: 78ef197ea85d2494a8cbba1e4dc69114, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 4870443892293093600
+      m_GuidHigh: 6743016660782430889
+    m_SerializedTextureGuid:
+      m_GuidLow: 6981761192497141693
+      m_GuidHigh: 4274606633562499785
+    m_Size: {x: 0, y: 0}
+    m_SpecifySize: 0
+    m_Name: ampel
+    m_Texture: {fileID: 2800000, guid: 496657bd32d060e4c96a05dc1574523b, type: 3}
