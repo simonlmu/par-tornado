@@ -4,46 +4,47 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
+using TMPro;
 
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
     // initialize gameState , set it to menu
     private GameState currentState = GameState.Menu;
 
     // List of all items
     public List<Item> itemsList = new List<Item>();
+    private Item currentItem { get; set;}
+
+
+    [SerializeField]
+    private TMP_Text _hints;
 
     // add items to the list
-    private void awake(){
-        itemsList.Add(new Item("PC", false, "This is a PC"));
-        itemsList.Add(new Item("Laptop", false, "This is a Laptop"));
+    private void Awake(){
+        instance = this;
+
+        itemsList.Add(new Item("Chip", false, "Ich bin golden, ...", "Der Computerchip besteht ..."));
+        itemsList.Add(new Item("Fahrrad Licht", false, "Ich bin schwarz und leuchte ... ", "Das einfache Fahrradlicht besteht..."));
+        itemsList.Add(new Item("Graphikkarte", false, "Ich bin ein Teil des Computers, ...", "Die Grafikkarte ist ein Teil des Computers, ..."));
+        itemsList.Add(new Item("Kinder Klavier", false, "Ich bin ein Spielzeug, ...", "Das Kinder Klavier ist ein Spielzeug, ..."));
+        itemsList.Add(new Item("Handy", false, "Ich bin ein elektronisches Gerät, ...", "Das Handy ist ein elektronisches Gerät, ..."));
+        itemsList.Add(new Item("Armbanduhr", false, "Ich bin ein Accessoire, ...", "Die Armbanduhr ist ein Accessoire, ..."));
         // ... 
     }
 
+    // function to get the full items' list
     public List<Item> GetItemsList(){
         return itemsList;
     }
 
     // Start is called before the first frame update
+    // sets the first game state to menu
     void Start()
     {
-        // set the first game state to menu
-        currentState = GameState.Menu;
+        SetGameState(GameState.Menu);
     }
-
-    
-
-    public void StartGame()
-    {
-        SetGameState(GameState.Gameplay);
-    }
-
-    public void EndGame()
-    {
-        SetGameState(GameState.End);
-    }
-
 
     private void SetGameState(GameState newState)
     {   
@@ -51,13 +52,14 @@ public class GameManager : MonoBehaviour
         switch (currentState)
         {
             case GameState.Menu:
-                // checks which items have been found already
+                 // checks which items have been found already
                 // if all items have been found go to GameState.End
-                returnUnfoundItems();
+                var unfoundItems = returnUnfoundItems();
                 
                 // if not all items have been found
                 // chose an item randomly from these
-                chooseRandomItem(returnUnfoundItems());
+                currentItem = chooseRandomItem(unfoundItems);
+                setHints(currentItem.itemHint);
 
                 // Explain the item that needs to be found to the user
                 // use the description of the item for that
@@ -81,6 +83,12 @@ public class GameManager : MonoBehaviour
             default:
                 Debug.LogWarning("Unknown game state: " + currentState);
                 break;
+        }
+
+        // notify that state has changed if it has changed
+        if (currentState != newState){
+            Debug.Log("Game state changed from " + currentState + " to " + newState);
+          
         }
     }
 
@@ -107,17 +115,16 @@ public class GameManager : MonoBehaviour
                 unfoundItems.Add(item);
             }
         }
-        if (returnUnfoundItems().Count == 0)
-                {
-                    SetGameState(GameState.End);
-                }
+        if (itemsList.Count == 0)
+        {
+            SetGameState(GameState.End);
+        }
         return unfoundItems;
-
     }
 
     // function to choose a random item from the unfound items
     public Item chooseRandomItem(List<Item> unfoundItems){
-        int randomIndex = Random.Range(0, unfoundItems.Count);
+        int randomIndex = UnityEngine.Random.Range(0, unfoundItems.Count);
         Item randomItem = unfoundItems[randomIndex];
         return randomItem;
     }
@@ -142,6 +149,14 @@ public class GameManager : MonoBehaviour
     public void showButton(){
         // show the button // ToDo
     }
+
+    public void setHints(string text)
+    {
+        if(_hints != null)
+        {
+            _hints.text = text;
+        }
+    }
 }
 
 // Defining the game states
@@ -159,12 +174,14 @@ public class Item
 {
     public string itemName;
     public bool isCollected;
-    public string itemDescription;
+    public string itemHint;
+    public string itemInformation;
 
-    public Item(string name, bool isCollected, string itemDescription)
+    public Item(string name, bool collected, string hint, string info)
     {
         this.itemName = name;
-        this.isCollected = isCollected;
-        this.itemDescription = itemDescription;
+        this.isCollected = collected;
+        this.itemHint = hint;
+        this.itemInformation = info;
     }
 }
