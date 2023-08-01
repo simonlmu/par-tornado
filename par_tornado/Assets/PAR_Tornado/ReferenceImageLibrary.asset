@@ -25,5 +25,5 @@ MonoBehaviour:
       m_GuidHigh: 16223305458998367019
     m_Size: {x: 0.3, y: 0.3}
     m_SpecifySize: 1
-    m_Name: QR-Code
+    m_Name: info
     m_Texture: {fileID: 0}
