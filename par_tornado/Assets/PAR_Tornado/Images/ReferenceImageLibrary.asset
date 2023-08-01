@@ -77,7 +77,7 @@ MonoBehaviour:
       m_GuidHigh: 2220825045524891146
     m_Size: {x: 0.18, y: 0.12370949}
     m_SpecifySize: 1
-    m_Name: grafikkarte_2
+    m_Name: grafikkarte
     m_Texture: {fileID: 2800000, guid: f807b4eda233ccf40a46cdca9cf4d11e, type: 3}
   - m_SerializedGuid:
       m_GuidLow: 4909194414531778993
@@ -127,7 +127,7 @@ MonoBehaviour:
       m_GuidHigh: 9296508592320885737
     m_Size: {x: 0.12, y: 0.10521428}
     m_SpecifySize: 1
-    m_Name: uhr_1
+    m_Name: uhr
     m_Texture: {fileID: 2800000, guid: b82506e3734f1a44e933a7484fd50381, type: 3}
   - m_SerializedGuid:
       m_GuidLow: 5211904383656141627

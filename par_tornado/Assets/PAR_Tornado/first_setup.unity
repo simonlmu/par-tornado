@@ -660,7 +660,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dea56a9eaadd1c439095de4f9a371cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SerializedLibrary: {fileID: 11400000, guid: 3dae2c9f3524b014ea184b84affead9a,
+  m_SerializedLibrary: {fileID: 11400000, guid: 0d3237457adc31a408d900d2308cf859,
     type: 2}
   m_MaxNumberOfMovingImages: 1
   m_TrackedImagePrefab: {fileID: 0}
@@ -823,6 +823,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemsList: []
+  currentItem:
+    itemName: 
+    isCollected: 0
+    itemHint: 
+    itemInformation: 
   _hints: {fileID: 1772345062}
 --- !u!4 &1627623790
 Transform:
@@ -886,4 +891,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   modalPanel: {fileID: 1403727093}
   button: {fileID: 2046211890}
-  _hints: {fileID: 1772345062}
