@@ -37,11 +37,16 @@ public class ImageRecognition : MonoBehaviour
         foreach (var trackedImage in args.added)
         {
             var imageName = trackedImage.referenceImage.name;
-            if (!_arPrefabDict.ContainsKey(imageName)) {
+            var currentItem = gameManager.getCurrentItem();
+            if (!_arPrefabDict.ContainsKey(imageName) && currentItem != null && currentItem.itemName == imageName) {
+
                 var infoBox = Instantiate(infoBoxPrefab, trackedImage.transform);
                 var infoBoxController = infoBox.GetComponent<InfoBoxController>();
-                infoBoxController.SetInfoText(imageName);
+
+                infoBoxController.SetInfoText(currentItem.itemInformation);
                 _arPrefabDict.Add(imageName, infoBox);
+
+                gameManager.itemFound(currentItem.itemName);
             }
         }
 

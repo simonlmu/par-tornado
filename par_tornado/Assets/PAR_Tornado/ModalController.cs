@@ -6,21 +6,6 @@ public class ModalController : MonoBehaviour
 {
     public GameObject modalPanel;
     public GameObject button;
-    
-    [SerializeField] 
-    private TMP_Text _hints;
-
-    private int counter;
-
-    private void setModalText(string text)
-    {
-        if(_hints != null)
-        {
-            _hints.text = text;
-        }
-
-        counter++;
-    }
 
     public void ShowModal()
     {
@@ -32,7 +17,6 @@ public class ModalController : MonoBehaviour
         {
             button.SetActive(false);
         }
-        setModalText("Modal: " + counter);
     }
 
     public void HideModal()
@@ -57,6 +41,5 @@ public class ModalController : MonoBehaviour
         {
             button.SetActive(!button.activeSelf);
         }
-        setModalText("Modal: " + counter);
     }
 }

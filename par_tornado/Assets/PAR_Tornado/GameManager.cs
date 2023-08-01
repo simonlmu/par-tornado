@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
+using TMPro;
 
 
 public class GameManager : MonoBehaviour
@@ -19,28 +20,31 @@ public class GameManager : MonoBehaviour
     // list of highscores
     private List<float> highscores = new List<float>();
 
+    public static GameManager instance;
     // initialize gameState , set it to menu
     private GameState currentState = GameState.Menu;
 
     // List of all items
-    private List<Item> itemsList = new List<Item>();
+    public List<Item> itemsList = new List<Item>();
     private List<Item> unfoundItems = new List<Item>();
+    public Item currentItem;
+
+    [SerializeField]
+    private TMP_Text _hints;
 
     // add items to the list
-    private void awake(){
-        // timer start
+    private void Awake(){
+        instance = this;
         startTime = Time.time;
-
-        // add items to the list
-        itemsList.Add(new Item("Chip", false, "Ich bin golden, ...", "Der Computerchip besteht ..."));
-        itemsList.Add(new Item("Fahrrad Licht", false, "Ich bin schwarz und leuchte ... ", "Das einfache Fahrradlicht besteht..."));
-        itemsList.Add(new Item("Graphikkarte", false, "Ich bin ein Teil des Computers, ...", "Die Grafikkarte ist ein Teil des Computers, ..."));
-        itemsList.Add(new Item("Kinder Klavier", false, "Ich bin ein Spielzeug, ...", "Das Kinder Klavier ist ein Spielzeug, ..."));
-        itemsList.Add(new Item("Handy", false, "Ich bin ein elektronisches Gerät, ...", "Das Handy ist ein elektronisches Gerät, ..."));
-        itemsList.Add(new Item("Armbanduhr", false, "Ich bin ein Accessoire, ...", "Die Armbanduhr ist ein Accessoire, ..."));
+        itemsList.Add(new Item("chip", false, "Ich bin golden, ...", "Der Computerchip besteht ..."));
+        itemsList.Add(new Item("licht", false, "Ich bin schwarz und leuchte ... ", "Das einfache Fahrradlicht besteht..."));
+        itemsList.Add(new Item("grafikkarte", false, "Ich bin ein Teil des Computers, ...", "Die Grafikkarte ist ein Teil des Computers, ..."));
+        itemsList.Add(new Item("klavier", false, "Ich bin ein Spielzeug, ...", "Das Kinder Klavier ist ein Spielzeug, ..."));
+        itemsList.Add(new Item("nokia", false, "Ich bin ein elektronisches Gerät, ...", "Das Handy ist ein elektronisches Gerät, ..."));
+        itemsList.Add(new Item("uhr", false, "Ich bin ein Accessoire, ...", "Die Armbanduhr ist ein Accessoire, ..."));
         // ... 
     }
-    
+
     // function to get the full items' list
     public List<Item> GetItemsList(){
         return itemsList;
@@ -79,13 +83,14 @@ public class GameManager : MonoBehaviour
         switch (currentState)
         {
             case GameState.Menu:
-                // checks which items have been found already
+                 // checks which items have been found already
                 // if all items have been found go to GameState.End
-                unfoundItems = returnUnfoundItems();
+                var unfoundItems = returnUnfoundItems();
                 
                 // if not all items have been found
                 // chose an item randomly from these
-                chooseRandomItem(unfoundItems);
+                currentItem = chooseRandomItem(unfoundItems);
+                setHints(currentItem.itemHint);
 
                 // Explain the item that needs to be found to the user
                 // use the description of the item for that
@@ -144,17 +149,16 @@ public class GameManager : MonoBehaviour
                 unfoundItems.Add(item);
             }
         }
-        if (unfoundItems.Count == 0)
-                {
-                    SetGameState(GameState.End);
-                }
-        // return the list of unfound items
+        if (itemsList.Count == 0)
+        {
+            SetGameState(GameState.End);
+        }
         return unfoundItems;
     }
 
     // function to choose a random item from the unfound items
     public Item chooseRandomItem(List<Item> unfoundItems){
-        int randomIndex = Random.Range(0, unfoundItems.Count);
+        int randomIndex = UnityEngine.Random.Range(0, unfoundItems.Count);
         Item randomItem = unfoundItems[randomIndex];
         return randomItem;
     }
@@ -178,6 +182,19 @@ public class GameManager : MonoBehaviour
     // function to show the button
     public void showButton(){
         // show the button // ToDo
+    }
+
+    public void setHints(string text)
+    {
+        if(_hints != null)
+        {
+            _hints.text = text;
+        }
+    }
+
+    public Item getCurrentItem()
+    {
+        return currentItem;
     }
 }
 
