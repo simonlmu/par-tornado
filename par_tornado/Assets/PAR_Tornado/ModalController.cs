@@ -10,10 +10,6 @@ public class ModalController : MonoBehaviour
     [SerializeField] 
     private TMP_Text _hints;
 
-    public GameObject infoBoxPrefab; // Reference to your AR info box prefab
-    private InfoBoxController infoBoxController; // Reference to the ARInfoBoxController component
-
-
     private int counter;
 
     private void setModalText(string text)
@@ -21,19 +17,6 @@ public class ModalController : MonoBehaviour
         if(_hints != null)
         {
             _hints.text = text;
-        }
-
-        if (infoBoxController == null)
-        {
-            // Instantiate the AR info box prefab and get its ARInfoBoxController component
-            // GameObject arInfoBox = Instantiate(infoBoxPrefab, transform.position, transform.rotation);
-            infoBoxController = FindObjectOfType<InfoBoxController>();
-        }
-
-        if (infoBoxController != null)
-        {
-            // Update the text in the info box
-            infoBoxController.SetInfoText(text);
         }
 
         counter++;
