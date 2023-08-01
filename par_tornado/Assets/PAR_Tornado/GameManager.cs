@@ -8,14 +8,30 @@ using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
+    // Endscreen stuff
+    [SerializeField]
+    public GameObject endScreenPrefab;
+
+    // track time for highscores
+    private float startTime;
+    private float elapsedTime;
+
+    // list of highscores
+    private List<float> highscores = new List<float>();
+
     // initialize gameState , set it to menu
     private GameState currentState = GameState.Menu;
 
     // List of all items
-    public List<Item> itemsList = new List<Item>();
+    private List<Item> itemsList = new List<Item>();
+    private List<Item> unfoundItems = new List<Item>();
 
     // add items to the list
     private void awake(){
+        // timer start
+        startTime = Time.time;
+
+        // add items to the list
         itemsList.Add(new Item("Chip", false, "Ich bin golden, ...", "Der Computerchip besteht ..."));
         itemsList.Add(new Item("Fahrrad Licht", false, "Ich bin schwarz und leuchte ... ", "Das einfache Fahrradlicht besteht..."));
         itemsList.Add(new Item("Graphikkarte", false, "Ich bin ein Teil des Computers, ...", "Die Grafikkarte ist ein Teil des Computers, ..."));
@@ -24,7 +40,7 @@ public class GameManager : MonoBehaviour
         itemsList.Add(new Item("Armbanduhr", false, "Ich bin ein Accessoire, ...", "Die Armbanduhr ist ein Accessoire, ..."));
         // ... 
     }
-
+    
     // function to get the full items' list
     public List<Item> GetItemsList(){
         return itemsList;
@@ -42,6 +58,16 @@ public class GameManager : MonoBehaviour
         SetGameState(GameState.Gameplay);
     }
 
+    private void Update(){
+        elapsedTime = Time.time - startTime;
+    }
+
+    // elapsed time for highscoring
+    public float GetElapsedTime()
+    {
+        return elapsedTime;
+    }
+
     public void EndGame()
     {
         SetGameState(GameState.End);
@@ -55,11 +81,11 @@ public class GameManager : MonoBehaviour
             case GameState.Menu:
                 // checks which items have been found already
                 // if all items have been found go to GameState.End
-                returnUnfoundItems();
+                unfoundItems = returnUnfoundItems();
                 
                 // if not all items have been found
                 // chose an item randomly from these
-                chooseRandomItem(returnUnfoundItems());
+                chooseRandomItem(unfoundItems);
 
                 // Explain the item that needs to be found to the user
                 // use the description of the item for that
@@ -93,10 +119,16 @@ public class GameManager : MonoBehaviour
     }
 
     // function to show the end screen
-    public void showEndScreen(){ // ToDo
-        // show the end screen
-    }
+    public void showEndScreen(){ 
 
+        // Instantiate the end screen canvas prefab only if it is not already instantiated.
+        if (!endScreenPrefab)
+        {
+            GameObject endScreen = Instantiate(endScreenPrefab, Vector3.zero, Quaternion.identity);
+        }
+        // Ensure the end screen canvas is visible.
+        endScreen.SetActive(true);
+    }
 
     // change game state when player finds an item
     public void itemFound(string itemName)
@@ -115,10 +147,11 @@ public class GameManager : MonoBehaviour
                 unfoundItems.Add(item);
             }
         }
-        if (returnUnfoundItems().Count == 0)
+        if (unfoundItems.Count == 0)
                 {
                     SetGameState(GameState.End);
                 }
+        // return the list of unfound items
         return unfoundItems;
     }
 
