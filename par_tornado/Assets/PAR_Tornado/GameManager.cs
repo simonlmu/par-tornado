@@ -122,10 +122,7 @@ public class GameManager : MonoBehaviour
     public void showEndScreen(){ 
 
         // Instantiate the end screen canvas prefab only if it is not already instantiated.
-        if (!endScreenPrefab)
-        {
-            GameObject endScreen = Instantiate(endScreenPrefab, Vector3.zero, Quaternion.identity);
-        }
+        GameObject endScreen = Instantiate(endScreenPrefab, Vector3.zero, Quaternion.identity);
         // Ensure the end screen canvas is visible.
         endScreen.SetActive(true);
     }
