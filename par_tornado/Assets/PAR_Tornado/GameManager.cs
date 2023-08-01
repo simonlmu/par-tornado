@@ -16,23 +16,26 @@ public class GameManager : MonoBehaviour
 
     // add items to the list
     private void awake(){
-        itemsList.Add(new Item("PC", false, "This is a PC"));
-        itemsList.Add(new Item("Laptop", false, "This is a Laptop"));
+        itemsList.Add(new Item("Chip", false, "Ich bin golden, ...", "Der Computerchip besteht ..."));
+        itemsList.Add(new Item("Fahrrad Licht", false, "Ich bin schwarz und leuchte ... ", "Das einfache Fahrradlicht besteht..."));
+        itemsList.Add(new Item("Graphikkarte", false, "Ich bin ein Teil des Computers, ...", "Die Grafikkarte ist ein Teil des Computers, ..."));
+        itemsList.Add(new Item("Kinder Klavier", false, "Ich bin ein Spielzeug, ...", "Das Kinder Klavier ist ein Spielzeug, ..."));
+        itemsList.Add(new Item("Handy", false, "Ich bin ein elektronisches Gerät, ...", "Das Handy ist ein elektronisches Gerät, ..."));
+        itemsList.Add(new Item("Armbanduhr", false, "Ich bin ein Accessoire, ...", "Die Armbanduhr ist ein Accessoire, ..."));
         // ... 
     }
 
+    // function to get the full items' list
     public List<Item> GetItemsList(){
         return itemsList;
     }
 
     // Start is called before the first frame update
+    // sets the first game state to menu
     void Start()
     {
-        // set the first game state to menu
         currentState = GameState.Menu;
     }
-
-    
 
     public void StartGame()
     {
@@ -43,7 +46,6 @@ public class GameManager : MonoBehaviour
     {
         SetGameState(GameState.End);
     }
-
 
     private void SetGameState(GameState newState)
     {   
@@ -82,6 +84,12 @@ public class GameManager : MonoBehaviour
                 Debug.LogWarning("Unknown game state: " + currentState);
                 break;
         }
+
+        // notify that state has changed if it has changed
+        if (currentState != newState){
+            Debug.Log("Game state changed from " + currentState + " to " + newState);
+          
+        }
     }
 
     // function to show the end screen
@@ -112,7 +120,6 @@ public class GameManager : MonoBehaviour
                     SetGameState(GameState.End);
                 }
         return unfoundItems;
-
     }
 
     // function to choose a random item from the unfound items
@@ -159,12 +166,14 @@ public class Item
 {
     public string itemName;
     public bool isCollected;
-    public string itemDescription;
+    public string itemHint;
+    public string itemInformation;
 
-    public Item(string name, bool isCollected, string itemDescription)
+    public Item(string name, bool collected, string hint, string info)
     {
         this.itemName = name;
-        this.isCollected = isCollected;
-        this.itemDescription = itemDescription;
+        this.isCollected = collected;
+        this.itemHint = hint;
+        this.itemInformation = info;
     }
 }

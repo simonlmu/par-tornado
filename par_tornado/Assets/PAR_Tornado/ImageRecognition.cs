@@ -8,9 +8,14 @@ public class ImageRecognition : MonoBehaviour
 {
     private ARTrackedImageManager _arTrackedImageManager;
 
+    // subscibe to the game manager
+    private GameManager gameManager;
+
+
     private void Awake()
     {
         _arTrackedImageManager = FindObjectOfType<ARTrackedImageManager>();
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     public void OnEnable()
