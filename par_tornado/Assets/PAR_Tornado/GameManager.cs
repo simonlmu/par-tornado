@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
 
     // List of all items
     public List<Item> itemsList = new List<Item>();
-    private Item currentItem { get; set;}
+    public Item currentItem;
 
 
     [SerializeField]
@@ -156,6 +156,11 @@ public class GameManager : MonoBehaviour
         {
             _hints.text = text;
         }
+    }
+
+    public Item getCurrentItem()
+    {
+        return currentItem;
     }
 }
 

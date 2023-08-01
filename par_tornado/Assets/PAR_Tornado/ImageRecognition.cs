@@ -12,9 +12,12 @@ public class ImageRecognition : MonoBehaviour
 
     public GameObject infoBoxPrefab; // Reference to your AR info box prefab
 
+    private GameManager gameManager;
+
     private void Awake()
     {
         _arTrackedImageManager = FindObjectOfType<ARTrackedImageManager>();
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     public void OnEnable()
@@ -32,11 +35,16 @@ public class ImageRecognition : MonoBehaviour
         foreach (var trackedImage in args.added)
         {
             var imageName = trackedImage.referenceImage.name;
+            var currentItem = gameManager.getCurrentItem();
             if (!_arPrefabDict.ContainsKey(imageName)) {
+
                 var infoBox = Instantiate(infoBoxPrefab, trackedImage.transform);
                 var infoBoxController = infoBox.GetComponent<InfoBoxController>();
-                infoBoxController.SetInfoText(imageName);
+
+                infoBoxController.SetInfoText(currentItem.itemInformation);
                 _arPrefabDict.Add(imageName, infoBox);
+
+                gameManager.itemFound(currentItem.itemName);
             }
         }
 
