@@ -45,7 +45,7 @@ public class ImageRecognition : MonoBehaviour
 
                 var infoBox = Instantiate(infoBoxPrefab, trackedImage.transform);
                 var infoBoxController = infoBox.GetComponent<InfoBoxController>();
-                infoBoxController.SetInfoText(currentItem.itemInformation);
+                infoBoxController.SetInfoText(currentItem.itemName);
 
                 _arPrefabDict.Add(imageName, infoBox);
 
