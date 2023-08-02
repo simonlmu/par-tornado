@@ -72,6 +72,16 @@ public class GameManager : MonoBehaviour
         return elapsedTime;
     }
 
+    public void RestartGame(){
+        // set all items to not found
+        foreach (Item item in itemsList)
+        {
+            item.isCollected = false;
+        }
+        // set game state to menu
+        SetGameState(GameState.Menu);
+        Debug.Log("Game restart successful!");
+    }
     public void EndGame()
     {
         SetGameState(GameState.End);
@@ -125,11 +135,12 @@ public class GameManager : MonoBehaviour
 
     // function to show the end screen
     public void showEndScreen(){ 
-
         // Instantiate the end screen canvas prefab only if it is not already instantiated.
         GameObject endScreen = Instantiate(endScreenPrefab, Vector3.zero, Quaternion.identity);
         // Ensure the end screen canvas is visible.
         endScreen.SetActive(true);
+        
+        Debug.Log("End screen set to active");
     }
 
     // change game state when player finds an item
