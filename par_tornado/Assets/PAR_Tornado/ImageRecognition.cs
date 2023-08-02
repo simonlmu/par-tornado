@@ -11,6 +11,7 @@ public class ImageRecognition : MonoBehaviour
     private readonly Dictionary<string, GameObject> _arPrefabDict = new Dictionary<string, GameObject>();
 
     public GameObject infoBoxPrefab; // Reference to your AR info box prefab
+    public GameObject infoModal; 
 
     // subscibe to the game manager
     private GameManager gameManager;
@@ -40,10 +41,14 @@ public class ImageRecognition : MonoBehaviour
             var currentItem = gameManager.getCurrentItem();
             if (!_arPrefabDict.ContainsKey(imageName) && currentItem != null && currentItem.itemName == imageName) {
 
+                infoModal.SetActive(true);
+                var infoModalController = infoModal.GetComponent<InfoBoxController>();
+                infoModalController.SetInfoText(currentItem.itemInformation);
+
                 var infoBox = Instantiate(infoBoxPrefab, trackedImage.transform);
                 var infoBoxController = infoBox.GetComponent<InfoBoxController>();
-
                 infoBoxController.SetInfoText(currentItem.itemInformation);
+
                 _arPrefabDict.Add(imageName, infoBox);
 
                 gameManager.itemFound(currentItem.itemName);
