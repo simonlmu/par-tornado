@@ -17,7 +17,6 @@ public class GameManager : MonoBehaviour
     public List<Item> itemsList = new List<Item>();
     public Item currentItem;
 
-
     [SerializeField]
     private TMP_Text _hints;
 
@@ -46,12 +45,18 @@ public class GameManager : MonoBehaviour
         SetGameState(GameState.Menu);
     }
 
-    private void SetGameState(GameState newState)
+    public void SetGameState(GameState newState)
     {   
         currentState = newState;
         switch (currentState)
         {
             case GameState.Menu:
+                // opening the game scene where player finds the item
+                // if player found it save it to the list of found items
+                // go back to menu
+                break;
+
+            case GameState.Gameplay:
                  // checks which items have been found already
                 // if all items have been found go to GameState.End
                 var unfoundItems = returnUnfoundItems();
@@ -61,18 +66,6 @@ public class GameManager : MonoBehaviour
                 currentItem = chooseRandomItem(unfoundItems);
                 setHints(currentItem.itemHint);
 
-                // Explain the item that needs to be found to the user
-                // use the description of the item for that
-
-                // show button to start/continue the game
-                showButton();
-
-                break;
-
-            case GameState.Gameplay:
-                // opening the game scene where player finds the item
-                // if player found it save it to the list of found items
-                // go back to menu
                 break;
 
             case GameState.End:
@@ -102,8 +95,8 @@ public class GameManager : MonoBehaviour
     public void itemFound(string itemName)
     {
         setItemStatus(itemName, true);
-        SetGameState(GameState.Menu);
     }
+
     
     // function to return unfound items
     public List<Item> returnUnfoundItems(){
@@ -143,11 +136,6 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogWarning("Item not found: " + itemName);
         }
-    }
-
-    // function to show the button
-    public void showButton(){
-        // show the button // ToDo
     }
 
     public void setHints(string text)
