@@ -402,6 +402,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4846490202263123579, guid: b80ebbc637c6d423bbf0693c865cd14b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5553170668470468103, guid: b80ebbc637c6d423bbf0693c865cd14b,
         type: 3}
       propertyPath: m_ReferenceResolution.x
@@ -892,6 +897,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   modalPanel: {fileID: 965939006}
+  hintPanel: {fileID: 1403727093}
 --- !u!114 &965939013
 MonoBehaviour:
   m_ObjectHideFlags: 0
