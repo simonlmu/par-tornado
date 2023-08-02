@@ -10,9 +10,16 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    // End canvas for end screen
+    [SerializeField]
+    public GameObject endCanvas;
+
+    [SerializeField]
+    public GameObject startCanvas;
+    
     public static GameManager instance;
     // initialize gameState , set it to menu
-    private GameState currentState = GameState.Menu;
+    private GameState currentState = GameState.Start;
 
     // List of all items
     public List<Item> itemsList = new List<Item>();
@@ -21,7 +28,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private TMP_Text _hints;
 
-    // add items to the list
+    // Singleton pattern
     private void Awake(){
         instance = this;
     }
@@ -35,7 +42,8 @@ public class GameManager : MonoBehaviour
     // sets the first game state to menu
     void Start()
     {
-        SetGameState(GameState.Menu);
+        SetGameState(GameState.Start);
+        Debug.Log("The current state is " + currentState);
     }
 
     public void SetGameState(GameState newState)
@@ -43,7 +51,17 @@ public class GameManager : MonoBehaviour
         currentState = newState;
         switch (currentState)
         {
+            case GameState.Start:
+                // show the start screen
+                if(startCanvas != null)
+                {
+                    startCanvas.SetActive(true);
+                    Debug.Log("Start Screen is active");
+                }
+                break;
+
             case GameState.Menu:
+                endStartScreen();
                 // opening the game scene where player finds the item
                 // if player found it save it to the list of found items
                 // go back to menu
@@ -78,9 +96,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // function to end StartScreen
+    public void endStartScreen(){
+            startCanvas.SetActive(false);
+    }    
+    
     // function to show the end screen
-    public void showEndScreen(){ // ToDo
-        // show the end screen
+    public void showEndScreen(){
+        if(endCanvas != null)
+        {
+            endCanvas.SetActive(true);
+        }
     }
 
 
@@ -94,14 +120,22 @@ public class GameManager : MonoBehaviour
     // function to return unfound items
     public List<Item> returnUnfoundItems(){
         List<Item> unfoundItems = new List<Item>();
+        // nur zum Rechnen found Items
+        List<Item> foundItems = new List<Item>();
         foreach (Item item in itemsList)
         {
             if (!item.isCollected)
             {
                 unfoundItems.Add(item);
             }
+            else
+            {
+                foundItems.Add(item);
+            }
         }
-        if (itemsList.Count == 0)
+        // now we have a list of unfound items and a list of found items
+        // wenn alle gefunden wurden
+        if (foundItems.Count == itemsList.Count)
         {
             SetGameState(GameState.End);
         }
@@ -143,12 +177,20 @@ public class GameManager : MonoBehaviour
     {
         return currentItem;
     }
+
+    public GameState getCurrentState(){
+        Debug.Log("The current state is " + currentState);
+        return currentState;
+    }
+    
 }
+
 
 // Defining the game states
 public enum GameState
     {  
         // Game States
+        Start,
         Menu,
         Gameplay,
         End        
