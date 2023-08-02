@@ -7,24 +7,27 @@ public class quitGame : MonoBehaviour
 {
 
      // a button
-    public Button btn;
-       
+    public GameObject btn;
+
     // get the quit button
     public void QuitGame()
     {
+        Debug.Log("Quit the game clicked!");
         // quit the game
         Application.Quit();
     }
 
     // Start is called before the first frame update
     void Start()
-    {
-        btn.onClick.AddListener(QuitGame);
+    {   
+        if (btn == null){
+            btn.SetActive(true);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+              
     }
 }
