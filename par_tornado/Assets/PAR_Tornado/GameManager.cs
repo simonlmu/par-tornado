@@ -17,7 +17,6 @@ public class GameManager : MonoBehaviour
     public List<Item> itemsList = new List<Item>();
     public Item currentItem;
 
-
     [SerializeField]
     private TMP_Text _hints;
 
