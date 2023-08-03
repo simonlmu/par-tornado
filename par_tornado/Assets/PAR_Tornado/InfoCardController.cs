@@ -23,7 +23,7 @@ public class InfoCardController : MonoBehaviour
         if (!gameManager.getCurrentState().Equals(GameState.Gameplay) ){
             gameManager.SetGameState(GameState.Gameplay);
         }
-        if(hintPanel != null)
+        if(hintPanel != null && gameManager.roundNumer < 3)
         {
             hintPanel.SetActive(true);
         }

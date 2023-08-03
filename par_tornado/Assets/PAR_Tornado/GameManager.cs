@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
 
     private int quizScore = 0;
 
-    private int roundNumer = 0;
+    public int roundNumer = 0;
 
     // End canvas for end screen
     [SerializeField]
@@ -29,9 +29,13 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     public GameObject quizCanvas;
+    [SerializeField]
+    public GameObject quizButton;
 
     [SerializeField]
     public GameObject hintButton;
+    [SerializeField]
+    public GameObject hintPanel;
     
     public static GameManager instance;
     // initialize gameState , set it to menu
@@ -113,6 +117,12 @@ public class GameManager : MonoBehaviour
                 break;
 
             case GameState.Gameplay:
+
+                if(roundNumer == 3) {
+                    SetGameState(GameState.Quiz);
+                    break;
+                }
+
                  // checks which items have been found already
                 // if all items have been found go to GameState.End
                 var unfoundItems = returnUnfoundItems();
@@ -128,19 +138,29 @@ public class GameManager : MonoBehaviour
 
             case GameState.Quiz:
                 // show the quiz screen
-                if(quizCanvas != null)
+                if (quizButton != null)
                 {
-                    quizCanvas.SetActive(true);
+                    quizButton.SetActive(true);
+                }
+                if (hintPanel != null)
+                {
+                    hintPanel.SetActive(false);
                 }
                 break;
 
             case GameState.End:
+                quizCanvas.SetActive(false);
                 // stop the timer
                 StopTimer();
                 // show our end screen
                 showEndScreen();
                 // set round number to 1
                 roundNumer = 1;
+                break;
+
+            case GameState.PostGame:
+                endCanvas.SetActive(false);
+                // show the post game screen
                 break;
 
             default:
@@ -157,8 +177,16 @@ public class GameManager : MonoBehaviour
 
     // function to end StartScreen
     public void endStartScreen(){
-            startCanvas.SetActive(false);
+        startCanvas.SetActive(false);
     }    
+
+    public void showQuizScreen(){
+        if(quizCanvas != null)
+        {
+            quizCanvas.SetActive(true);
+            quizButton.SetActive(false);
+        }
+    }
     
     // function to show the end screen
     public void showEndScreen(){
@@ -213,12 +241,6 @@ public class GameManager : MonoBehaviour
         if (foundItems.Count == 0)
         {
             isTimerRunning = true;
-        }
-        // now we have a list of unfound items and a list of found items
-        // wenn alle gefunden wurden oder Alternative: wenn 5 Items gefunden wurden
-        if (foundItems.Count == 3)
-        {
-            SetGameState(GameState.Quiz);
         }
         return unfoundItems;
     }
@@ -283,6 +305,11 @@ public class GameManager : MonoBehaviour
         Debug.Log("The current state is " + currentState);
         return currentState;
     }
+
+    public void setPostGameState()
+    {
+        SetGameState(GameState.PostGame);
+    }
     
     public int getQuizScore()
     {
@@ -304,7 +331,8 @@ public enum GameState
         Menu,
         Gameplay,
         End, 
-        Quiz
+        Quiz,
+        PostGame
     }
 
 // Defining Item class
