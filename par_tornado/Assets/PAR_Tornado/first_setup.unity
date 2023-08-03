@@ -255,8 +255,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -200, y: -40}
+  m_AnchoredPosition: {x: 0, y: 50}
+  m_SizeDelta: {x: -80, y: -140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &86875727
 GameObject:
@@ -721,7 +721,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Finde 5 Schrotteile um mehr zu erfahren!!
+  m_text: "Ich sehe Schrott den du nicht siehst!\n\nIch gebe dir Hinweise zu meinem
+    Aussehen und du musst mich finden um mehr zu erfahren\n\nFinde 5 Teile f\xFCr
+    einen kleinen Preis!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -748,7 +750,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 70.2
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1017,6 +1019,11 @@ PrefabInstance:
 
 '
       objectReference: {fileID: 0}
+    - target: {fileID: 3253301635412288508, guid: b80ebbc637c6d423bbf0693c865cd14b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3568212420536596685, guid: b80ebbc637c6d423bbf0693c865cd14b,
         type: 3}
       propertyPath: m_CullTransparentMesh
@@ -1055,7 +1062,7 @@ PrefabInstance:
     - target: {fileID: 4386857544761263304, guid: b80ebbc637c6d423bbf0693c865cd14b,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 250
+      value: 170
       objectReference: {fileID: 0}
     - target: {fileID: 4394756919296523378, guid: b80ebbc637c6d423bbf0693c865cd14b,
         type: 3}
@@ -2318,8 +2325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74079f8241d221a43b20b7fbb8bf18e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textGO2: {fileID: 1400883212}
-  gameManager: {fileID: 1627623789}
+  _infoText: {fileID: 0}
 --- !u!1 &965939006
 GameObject:
   m_ObjectHideFlags: 0
@@ -3902,7 +3908,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -40}
+  m_AnchoredPosition: {x: 0, y: 60}
   m_SizeDelta: {x: 400, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1772345063
@@ -4050,8 +4056,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74079f8241d221a43b20b7fbb8bf18e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textGO2: {fileID: 1400883212}
-  gameManager: {fileID: 1627623789}
+  _infoText: {fileID: 0}
 --- !u!114 &1944528626
 MonoBehaviour:
   m_ObjectHideFlags: 0
