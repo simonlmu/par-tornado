@@ -37,7 +37,7 @@ public class ImageRecognition : MonoBehaviour
         {
             var imageName = trackedImage.referenceImage.name;
             var currentItem = gameManager.getCurrentItem();
-            if (!_arPrefabDict.ContainsKey(imageName) && currentItem != null && currentItem.itemName == imageName) {
+            if (!_arPrefabDict.ContainsKey(imageName) && currentItem != null && currentItem.imageName == imageName) {
 
                 infoModal.SetActive(true);
                 var infoModalController = infoModal.GetComponent<InfoBoxController>();

@@ -170,8 +170,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4285577170
+  m_fontColor: {r: 0.8235295, g: 0.7176471, b: 0.43921572, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -255,8 +255,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -200, y: -40}
+  m_AnchoredPosition: {x: 0, y: 50}
+  m_SizeDelta: {x: -80, y: -140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &86875727
 GameObject:
@@ -325,8 +325,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4281874488
+  m_fontColor: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -721,7 +721,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Finde 5 Schrotteile um mehr zu erfahren!!
+  m_text: "Ich sehe Schrott den du nicht siehst!\n\nIch gebe dir Hinweise zu meinem
+    Aussehen und du musst mich finden um mehr zu erfahren\n\nFinde 5 Teile f\xFCr
+    einen kleinen Preis!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -730,8 +732,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4292730333
+  m_fontColor: {r: 0.8679245, g: 0.8679245, b: 0.8679245, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -748,14 +750,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 70.2
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -963,28 +965,32 @@ PrefabInstance:
     - target: {fileID: 2635100476364741426, guid: b80ebbc637c6d423bbf0693c865cd14b,
         type: 3}
       propertyPath: m_Type
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2635100476364741426, guid: b80ebbc637c6d423bbf0693c865cd14b,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 7cc2ac32e65d43f419bd5ffbf0a3528b,
+      objectReference: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 2635100476364741426, guid: b80ebbc637c6d423bbf0693c865cd14b,
         type: 3}
+      propertyPath: m_Color.a
+      value: 0.8666667
+      objectReference: {fileID: 0}
     - target: {fileID: 2635100476364741426, guid: b80ebbc637c6d423bbf0693c865cd14b,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.21960786
+      value: 0.10980393
       objectReference: {fileID: 0}
     - target: {fileID: 2635100476364741426, guid: b80ebbc637c6d423bbf0693c865cd14b,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.21960786
+      value: 0.16862746
       objectReference: {fileID: 0}
     - target: {fileID: 2635100476364741426, guid: b80ebbc637c6d423bbf0693c865cd14b,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.21960786
+      value: 0.023529414
       objectReference: {fileID: 0}
     - target: {fileID: 2635100476364741426, guid: b80ebbc637c6d423bbf0693c865cd14b,
         type: 3}
@@ -994,7 +1000,7 @@ PrefabInstance:
     - target: {fileID: 2635100476364741426, guid: b80ebbc637c6d423bbf0693c865cd14b,
         type: 3}
       propertyPath: m_PixelsPerUnitMultiplier
-      value: 0.1
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 2868198473449074176, guid: b80ebbc637c6d423bbf0693c865cd14b,
         type: 3}
@@ -1017,6 +1023,11 @@ PrefabInstance:
       value: 'Hints
 
 '
+      objectReference: {fileID: 0}
+    - target: {fileID: 3253301635412288508, guid: b80ebbc637c6d423bbf0693c865cd14b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3568212420536596685, guid: b80ebbc637c6d423bbf0693c865cd14b,
         type: 3}
@@ -1056,7 +1067,7 @@ PrefabInstance:
     - target: {fileID: 4386857544761263304, guid: b80ebbc637c6d423bbf0693c865cd14b,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 250
+      value: 170
       objectReference: {fileID: 0}
     - target: {fileID: 4394756919296523378, guid: b80ebbc637c6d423bbf0693c865cd14b,
         type: 3}
@@ -1983,8 +1994,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4292730333
+  m_fontColor: {r: 0.8666667, g: 0.8666667, b: 0.8666667, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2178,8 +2189,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4292730333
+  m_fontColor: {r: 0.8666667, g: 0.8666667, b: 0.8666667, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2989,7 +3000,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3647059, g: 0.31764707, b: 0.1764706, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4105,7 +4116,7 @@ MonoBehaviour:
   startCanvas: {fileID: 855011274}
   hintButton: {fileID: 1772345060}
   itemsList:
-  - itemName: chip
+  - itemName: Computer Chip
     isCollected: 0
     itemHint:
     - Ich bin golden
@@ -4116,7 +4127,8 @@ MonoBehaviour:
       sind. Diese Materialien werden jedoch aus Erdmineralien gewonnen, die den Abbauprozess
       mit erheblichen Umweltauswirkungen begleiten, einschlie\xDFlich der Entstehung
       giftiger Abf\xE4lle und der Beeintr\xE4chtigung von \xD6kosystemen."
-  - itemName: klavier
+    imageName: chip
+  - itemName: Kinder Klavier
     isCollected: 0
     itemHint:
     - 'So bunt wie ein Regenbogen '
@@ -4127,7 +4139,8 @@ MonoBehaviour:
       nicht-erneuerbaren Rohstoffen hergestellt wird und bei der Entsorgung schwer
       abbaubar ist. Umweltbewusstes Recycling und die Verwendung von recyceltem Kunststoff
       k\xF6nnten die Umweltauswirkungen verringern."
-  - itemName: nokia
+    imageName: klavier
+  - itemName: Tastenhandy
     isCollected: 0
     itemHint:
     - "Grau, schwarz und unzerst\xF6rbar"
@@ -4139,7 +4152,8 @@ MonoBehaviour:
       vorhanden sein, was bei unsachgem\xE4\xDFer Entsorgung eine Umweltbelastung
       darstellt. Recyceln und umweltgerechte Entsorgung sind daher wichtig, um die
       Umweltbelastung zu minimieren."
-  - itemName: licht
+    imageName: nokia
+  - itemName: Fahrradlicht
     isCollected: 0
     itemHint:
     - Ich bin schwarz und klar
@@ -4148,7 +4162,8 @@ MonoBehaviour:
       die eine kosteng\xFCnstige und leichte L\xF6sung f\xFCr die Beleuchtung bieten.
       Allerdings stammen viele Kunststoffe aus nicht erneuerbaren Rohstoffen wie
       Erd\xF6l, was zu einem erh\xF6hten \xF6kologischen Fu\xDFabdruck f\xFChrt."
-  - itemName: uhr
+    imageName: licht
+  - itemName: Armbanduhr
     isCollected: 0
     itemHint:
     - 'Gold und Silber '
@@ -4160,7 +4175,8 @@ MonoBehaviour:
       werden, die die Umwelt belasten. Um Umweltauswirkungen zu minimieren, ist eine
       verantwortungsvolle Entsorgung und das Recycling von Elektronikabf\xE4llen
       notwendig."
-  - itemName: grafikkarte
+    imageName: uhr
+  - itemName: Grafikkarte
     isCollected: 0
     itemHint:
     - Ich bin blau
@@ -4169,11 +4185,13 @@ MonoBehaviour:
       Energie, insbesondere bei hochleistungsf\xE4higen Modellen. Ein energieeffizientes
       Design und die Nutzung erneuerbarer Energien k\xF6nnen dazu beitragen, den
       Stromverbrauch zu reduzieren und die Umweltauswirkungen zu minimieren."
+    imageName: grafikkarte
   currentItem:
     itemName: 
     isCollected: 0
     itemHint: []
     itemInformation: 
+    imageName: 
   _hints: {fileID: 13168225}
 --- !u!4 &1627623790
 Transform:
@@ -4227,7 +4245,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -40}
+  m_AnchoredPosition: {x: 0, y: 60}
   m_SizeDelta: {x: 400, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1772345063
@@ -4299,7 +4317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3647059, g: 0.31764707, b: 0.1764706, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
