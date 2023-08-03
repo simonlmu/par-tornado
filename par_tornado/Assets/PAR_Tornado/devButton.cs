@@ -15,7 +15,7 @@ public class devButton : MonoBehaviour
 
     public void OnDevButtonClick() {
         Debug.Log("Dev button clicked");
-        gameManager.showEndScreen();
+        gameManager.SetGameState(GameState.End);
     }
 
     // Start is called before the first frame update

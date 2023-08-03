@@ -11,6 +11,8 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     private float timer = 0f;
+    private float helpTimer = 0f;
+
     private bool isTimerRunning = false;
     private float timeLimit = 60f;
 
@@ -34,7 +36,6 @@ public class GameManager : MonoBehaviour
 
     // Singleton pattern
     private void Awake(){
-        isTimerRunning = true;
        // Ensure there is only one instance of the GameManager in the scene.
         if (instance == null)
         {
@@ -64,6 +65,13 @@ public class GameManager : MonoBehaviour
         if (isTimerRunning)
         {
             timer += Time.deltaTime;
+            helpTimer += Time.deltaTime;
+            // each 1 sec, send a Debug with the timer
+            if (helpTimer >= 1f)
+            {
+                Debug.Log("The elapsed time is " + timer);
+                helpTimer = 0f;
+            }
         }
     }
 
@@ -166,6 +174,11 @@ public class GameManager : MonoBehaviour
             {
                 foundItems.Add(item);
             }
+        }
+        // first time of playing, start the timer
+        if (foundItems.Count == 0)
+        {
+            isTimerRunning = true;
         }
         // now we have a list of unfound items and a list of found items
         // wenn alle gefunden wurden oder Alternative: wenn 5 Items gefunden wurden
