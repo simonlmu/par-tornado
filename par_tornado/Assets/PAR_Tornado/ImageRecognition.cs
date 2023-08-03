@@ -41,11 +41,13 @@ public class ImageRecognition : MonoBehaviour
 
                 infoModal.SetActive(true);
                 var infoModalController = infoModal.GetComponent<InfoBoxController>();
-                infoModalController.SetInfoText(currentItem.itemInformation);
+                infoModalController.SetInfoTitle(currentItem.itemInformation);
 
                 var infoBox = Instantiate(infoBoxPrefab, trackedImage.transform);
                 var infoBoxController = infoBox.GetComponent<InfoBoxController>();
-                infoBoxController.SetInfoText(currentItem.itemName);
+                infoBoxController.SetInfoText(currentItem.itemInformation);
+                infoBoxController.SetInfoTitle(currentItem.itemName);
+                infoBoxController.setInfoModal(infoModal);
 
                 _arPrefabDict.Add(imageName, infoBox);
 
