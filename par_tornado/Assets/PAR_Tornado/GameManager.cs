@@ -10,6 +10,10 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    private float timer = 0f;
+    private bool isTimerRunning = false;
+    private float timeLimit = 60f;
+
     // End canvas for end screen
     [SerializeField]
     public GameObject endCanvas;
@@ -30,7 +34,16 @@ public class GameManager : MonoBehaviour
 
     // Singleton pattern
     private void Awake(){
-        instance = this;
+        isTimerRunning = true;
+       // Ensure there is only one instance of the GameManager in the scene.
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     // function to get the full items' list
@@ -42,8 +55,28 @@ public class GameManager : MonoBehaviour
     // sets the first game state to menu
     void Start()
     {
-        SetGameState(GameState.Start);
+        SetGameState(GameState.Menu);
         Debug.Log("The current state is " + currentState);
+    }
+
+    void Update(){
+        // Check if the timer is running and update the elapsed time.
+        if (isTimerRunning)
+        {
+            timer += Time.deltaTime;
+        }
+    }
+
+    private void StopTimer()
+    {
+        // Call this method to stop the timer.
+        isTimerRunning = false;
+    }
+
+    public float getElapsedTime()
+    {
+        // Call this method to get the elapsed time.
+        return timer;
     }
 
     public void SetGameState(GameState newState)
@@ -80,6 +113,8 @@ public class GameManager : MonoBehaviour
                 break;
 
             case GameState.End:
+                // stop the timer
+                StopTimer();
                 // show our end screen
                 showEndScreen();
                 break;
@@ -120,7 +155,6 @@ public class GameManager : MonoBehaviour
     // function to return unfound items
     public List<Item> returnUnfoundItems(){
         List<Item> unfoundItems = new List<Item>();
-        // nur zum Rechnen found Items
         List<Item> foundItems = new List<Item>();
         foreach (Item item in itemsList)
         {
@@ -134,8 +168,8 @@ public class GameManager : MonoBehaviour
             }
         }
         // now we have a list of unfound items and a list of found items
-        // wenn alle gefunden wurden
-        if (foundItems.Count == itemsList.Count)
+        // wenn alle gefunden wurden oder Alternative: wenn 5 Items gefunden wurden
+        if (foundItems.Count == 5)
         {
             SetGameState(GameState.End);
         }
