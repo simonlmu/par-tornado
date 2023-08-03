@@ -2359,6 +2359,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 699718876}
   m_CullTransparentMesh: 1
+--- !u!1 &754771230 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2798027724138910129, guid: 42e117e60edff4abe903b7bbaeb89ecb,
+    type: 3}
+  m_PrefabInstance: {fileID: 677038664}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &754771231 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8430587915101059650, guid: b80ebbc637c6d423bbf0693c865cd14b,
@@ -4353,10 +4359,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endCanvas: {fileID: 872476104}
   startCanvas: {fileID: 855011274}
+  quizCanvas: {fileID: 754771230}
   hintButton: {fileID: 1772345060}
   itemsList:
   - itemName: Computer Chip
-    isCollected: 1
+    isCollected: 0
     itemHint:
     - Ich bin golden
     - Vorsicht, ich pikse!
@@ -4373,7 +4380,7 @@ MonoBehaviour:
     - Es spart Energie und reduziert Abfall.
     - Es hat keinen Einfluss auf die Umwelt.
   - itemName: Kinder Klavier
-    isCollected: 1
+    isCollected: 0
     itemHint:
     - 'So bunt wie ein Regenbogen '
     - Kinder lieben, Eltern hassen mich
@@ -4390,7 +4397,7 @@ MonoBehaviour:
     - Es wird zu Tierfutter verarbeitet.
     - Es wird verbrannt.
   - itemName: Tastenhandy
-    isCollected: 1
+    isCollected: 0
     itemHint:
     - "Grau, schwarz und unzerst\xF6rbar"
     - "Tasten \xFCber Touchscreens"
@@ -4892,7 +4899,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.34901962, g: 0.30588236, b: 0.17254902, a: 0.392}
+  m_Color: {r: 0.34901962, g: 0.30588236, b: 0.17254902, a: 0.92941177}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

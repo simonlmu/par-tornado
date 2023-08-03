@@ -18,7 +18,7 @@ public class roundNrController : MonoBehaviour
     private void Update()
     {
         if (progressNrText != null){
-            progressNrText.text = gameManager.getRoundNumber() + "/5";
+            progressNrText.text = gameManager.getRoundNumber() + "/3";
         }
         else {
             Debug.LogWarning("progressNrText is null.");

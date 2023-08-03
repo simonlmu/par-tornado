@@ -28,6 +28,9 @@ public class GameManager : MonoBehaviour
     public GameObject startCanvas;
 
     [SerializeField]
+    public GameObject quizCanvas;
+
+    [SerializeField]
     public GameObject hintButton;
     
     public static GameManager instance;
@@ -123,6 +126,14 @@ public class GameManager : MonoBehaviour
 
                 break;
 
+            case GameState.Quiz:
+                // show the quiz screen
+                if(quizCanvas != null)
+                {
+                    quizCanvas.SetActive(true);
+                }
+                break;
+
             case GameState.End:
                 // stop the timer
                 StopTimer();
@@ -205,9 +216,9 @@ public class GameManager : MonoBehaviour
         }
         // now we have a list of unfound items and a list of found items
         // wenn alle gefunden wurden oder Alternative: wenn 5 Items gefunden wurden
-        if (foundItems.Count == 5)
+        if (foundItems.Count == 3)
         {
-            SetGameState(GameState.End);
+            SetGameState(GameState.Quiz);
         }
         return unfoundItems;
     }
@@ -292,7 +303,8 @@ public enum GameState
         Start,
         Menu,
         Gameplay,
-        End        
+        End, 
+        Quiz
     }
 
 // Defining Item class
