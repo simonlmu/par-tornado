@@ -10,9 +10,20 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    private float timer = 0f;
+    private bool isTimerRunning = false;
+    private float timeLimit = 60f;
+
+    // End canvas for end screen
+    [SerializeField]
+    public GameObject endCanvas;
+
+    [SerializeField]
+    public GameObject startCanvas;
+    
     public static GameManager instance;
     // initialize gameState , set it to menu
-    private GameState currentState = GameState.Menu;
+    private GameState currentState = GameState.Start;
 
     // List of all items
     public List<Item> itemsList = new List<Item>();
@@ -21,9 +32,18 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private TMP_Text _hints;
 
-    // add items to the list
+    // Singleton pattern
     private void Awake(){
-        instance = this;
+        isTimerRunning = true;
+       // Ensure there is only one instance of the GameManager in the scene.
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     // function to get the full items' list
@@ -36,6 +56,27 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         SetGameState(GameState.Menu);
+        Debug.Log("The current state is " + currentState);
+    }
+
+    void Update(){
+        // Check if the timer is running and update the elapsed time.
+        if (isTimerRunning)
+        {
+            timer += Time.deltaTime;
+        }
+    }
+
+    private void StopTimer()
+    {
+        // Call this method to stop the timer.
+        isTimerRunning = false;
+    }
+
+    public float getElapsedTime()
+    {
+        // Call this method to get the elapsed time.
+        return timer;
     }
 
     public void SetGameState(GameState newState)
@@ -43,7 +84,17 @@ public class GameManager : MonoBehaviour
         currentState = newState;
         switch (currentState)
         {
+            case GameState.Start:
+                // show the start screen
+                if(startCanvas != null)
+                {
+                    startCanvas.SetActive(true);
+                    Debug.Log("Start Screen is active");
+                }
+                break;
+
             case GameState.Menu:
+                endStartScreen();
                 // opening the game scene where player finds the item
                 // if player found it save it to the list of found items
                 // go back to menu
@@ -62,6 +113,8 @@ public class GameManager : MonoBehaviour
                 break;
 
             case GameState.End:
+                // stop the timer
+                StopTimer();
                 // show our end screen
                 showEndScreen();
                 break;
@@ -78,9 +131,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // function to end StartScreen
+    public void endStartScreen(){
+            startCanvas.SetActive(false);
+    }    
+    
     // function to show the end screen
-    public void showEndScreen(){ // ToDo
-        // show the end screen
+    public void showEndScreen(){
+        if(endCanvas != null)
+        {
+            endCanvas.SetActive(true);
+        }
     }
 
 
@@ -94,14 +155,21 @@ public class GameManager : MonoBehaviour
     // function to return unfound items
     public List<Item> returnUnfoundItems(){
         List<Item> unfoundItems = new List<Item>();
+        List<Item> foundItems = new List<Item>();
         foreach (Item item in itemsList)
         {
             if (!item.isCollected)
             {
                 unfoundItems.Add(item);
             }
+            else
+            {
+                foundItems.Add(item);
+            }
         }
-        if (itemsList.Count == 0)
+        // now we have a list of unfound items and a list of found items
+        // wenn alle gefunden wurden oder Alternative: wenn 5 Items gefunden wurden
+        if (foundItems.Count == 5)
         {
             SetGameState(GameState.End);
         }
@@ -143,12 +211,20 @@ public class GameManager : MonoBehaviour
     {
         return currentItem;
     }
+
+    public GameState getCurrentState(){
+        Debug.Log("The current state is " + currentState);
+        return currentState;
+    }
+    
 }
+
 
 // Defining the game states
 public enum GameState
     {  
         // Game States
+        Start,
         Menu,
         Gameplay,
         End        
