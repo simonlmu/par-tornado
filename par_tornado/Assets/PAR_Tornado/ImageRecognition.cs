@@ -52,6 +52,7 @@ public class ImageRecognition : MonoBehaviour
                 _arPrefabDict.Add(imageName, infoBox);
 
                 gameManager.itemFound(currentItem.itemName);
+                gameManager.SetGameState(GameState.Start);
             }
         }
 
