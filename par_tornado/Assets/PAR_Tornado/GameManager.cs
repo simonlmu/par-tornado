@@ -90,11 +90,11 @@ public class GameManager : MonoBehaviour
         {
             case GameState.Start:
                 // show the start screen
-                if(startCanvas != null)
-                {
-                    startCanvas.SetActive(true);
-                    Debug.Log("Start Screen is active");
-                }
+                // if(startCanvas != null)
+                // {
+                //     startCanvas.SetActive(true);
+                //     Debug.Log("Start Screen is active");
+                // }
                 break;
 
             case GameState.Menu:
