@@ -750,7 +750,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70
+  m_fontSize: 72
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4256,85 +4256,103 @@ MonoBehaviour:
     - Ich bin golden
     - Vorsicht, ich pikse!
     - Ich komme aus Malaysia
-    itemInformation: "Der Computerchip besteht aus hochwertigen Halbleitermaterialien
-      wie Silizium, die f\xFCr die Leistungsf\xE4higkeit des Chips unerl\xE4sslich
-      sind. Diese Materialien werden jedoch aus Erdmineralien gewonnen, die den Abbauprozess
-      mit erheblichen Umweltauswirkungen begleiten, einschlie\xDFlich der Entstehung
-      giftiger Abf\xE4lle und der Beeintr\xE4chtigung von \xD6kosystemen."
+    itemInformation: "Das Recycling von einer Million alten Prozessorchips kann genug
+      Energie sparen, um etwa 3.500 Haushalte ein ganzes Jahr lang mit Strom zu versorgen!
+      Indem du deine alten Prozessorchips recycelst, leistest du also einen wertvollen
+      Beitrag zur Energieeinsparung und zur Verringerung elektronischen Abfalls.
+      Eine kleine Tat kann eine gro\xDFe Wirkung haben!"
     imageName: chip
-    itemQuestion: Chip?
+    itemQuestion: Was passiert, wenn du alte Prozessorchips recycelst?
     itemAnswers:
-    - Chip!
-    - Chip!!
-    - Chip!!!
+    - "Es f\xFChrt zu mehr elektronischem Abfall."
+    - Es spart Energie und reduziert Abfall.
+    - Es hat keinen Einfluss auf die Umwelt.
   - itemName: Kinder Klavier
     isCollected: 0
     itemHint:
     - 'So bunt wie ein Regenbogen '
     - Kinder lieben, Eltern hassen mich
-    itemInformation: "Das bunte Kinderklavier besteht haupts\xE4chlich aus Plastik,
-      das eine einfache und kosteng\xFCnstige Herstellung erm\xF6glicht. Allerdings
-      hat die Plastikproduktion negative Auswirkungen auf die Umwelt, da sie aus
-      nicht-erneuerbaren Rohstoffen hergestellt wird und bei der Entsorgung schwer
-      abbaubar ist. Umweltbewusstes Recycling und die Verwendung von recyceltem Kunststoff
-      k\xF6nnten die Umweltauswirkungen verringern."
+    itemInformation: "Wenn du ein altes Plastikkinderspielzeug recycelst, kann es
+      sp\xE4ter als Teil eines neuen Raketen- oder Raumschiff-Designs wiedergeboren
+      werden! Ein kleines Spielzeug kann zu einem interstellaren Reisenden werden!Wenn
+      du ein altes Plastikkinderspielzeug recycelst, kann es sp\xE4ter als Teil eines
+      neuen Raketen- oder Raumschiff-Designs wiedergeboren werden! Ein kleines Spielzeug
+      kann zu einem interstellaren Reisenden werden!"
     imageName: klavier
-    itemQuestion: 
-    itemAnswers: []
+    itemQuestion: Was kann passieren, wenn du altes Plastikkinderspielzeug recycelst?
+    itemAnswers:
+    - Es wird zu neuen Designs umgewandelt.
+    - Es wird zu Tierfutter verarbeitet.
+    - Es wird verbrannt.
   - itemName: Tastenhandy
     isCollected: 0
     itemHint:
     - "Grau, schwarz und unzerst\xF6rbar"
     - "Tasten \xFCber Touchscreens"
-    itemInformation: "Das alte Tastenhandy enth\xE4lt Metalle wie Gold, Silber und
-      Kupfer, die f\xFCr seine Funktionalit\xE4t erforderlich sind. Der Abbau dieser
-      Rohstoffe f\xFChrt zu Umweltauswirkungen wie Landschaftsst\xF6rungen und Wasserverschmutzung.
-      Dar\xFCber hinaus k\xF6nnen Schwermetalle wie Blei und Cadmium in der Batterie
-      vorhanden sein, was bei unsachgem\xE4\xDFer Entsorgung eine Umweltbelastung
-      darstellt. Recyceln und umweltgerechte Entsorgung sind daher wichtig, um die
-      Umweltbelastung zu minimieren."
+    itemInformation: "Recycling alter Handys hilft nicht nur der Umwelt, sondern
+      auch den Tieren! Wenn du dein altes Handy recycelst, werden seltene Erdenmetalle
+      wiederverwendet, die in vielen elektronischen Ger\xE4ten stecken. Das bedeutet
+      weniger Bergbau und sch\xFCtzt die Lebensr\xE4ume bedrohter Tierarten.Recycling
+      alter Handys hilft nicht nur der Umwelt, sondern auch den Tieren! Wenn du dein
+      altes Handy recycelst, werden seltene Erdenmetalle wiederverwendet, die in
+      vielen elektronischen Ger\xE4ten stecken. Das bedeutet weniger Bergbau und
+      sch\xFCtzt die Lebensr\xE4ume bedrohter Tierarten."
     imageName: nokia
-    itemQuestion: 
-    itemAnswers: []
+    itemQuestion: Was bewirkt das Recycling alter Handys?
+    itemAnswers:
+    - "Sch\xFCtzt Lebensraum von Tieren."
+    - Keine Auswirkungen auf die Umwelt.
+    - "Mehr Bergbauaktivit\xE4ten."
   - itemName: Fahrradlicht
     isCollected: 0
     itemHint:
     - Ich bin schwarz und klar
     - Ich leuchte dir den weg
-    itemInformation: "Das einfache Fahrradlicht besteht haupts\xE4chlich aus Plastikmaterialien,
-      die eine kosteng\xFCnstige und leichte L\xF6sung f\xFCr die Beleuchtung bieten.
-      Allerdings stammen viele Kunststoffe aus nicht erneuerbaren Rohstoffen wie
-      Erd\xF6l, was zu einem erh\xF6hten \xF6kologischen Fu\xDFabdruck f\xFChrt."
+    itemInformation: "Einige moderne Fahrradlichter werden aus umweltfreundlichen
+      Materialien hergestellt und sind leicht auseinanderzubauen, um die verschiedenen
+      Komponenten f\xFCr das Recycling zu trennen. Das Recycling von Fahrradlichtern
+      tr\xE4gt dazu bei, Elektroschrott zu reduzieren und wertvolle Ressourcen f\xFCr
+      zuk\xFCnftige Produkte zu erhalten."
     imageName: licht
-    itemQuestion: 
-    itemAnswers: []
+    itemQuestion: Warum ist das Recycling von Fahrradlichtern wichtig?
+    itemAnswers:
+    - Um wertvolle Ressourcen zu erhalten.
+    - Um mehr Fahrradlichter zu produzieren.
+    - "Um Fahrr\xE4der zu entsorgen."
   - itemName: Armbanduhr
     isCollected: 0
     itemHint:
     - 'Gold und Silber '
     - 'Ich laufe Tag und Nacht '
     - Du kannst mir meinen Todestag ablesen
-    itemInformation: "Die alte Solar-Armbanduhr enth\xE4lt wertvolle Rohstoffe wie
-      Silizium und Metalle, die aus ressourcenintensiven Bergbauaktivit\xE4ten stammen.
-      Bei unsachgem\xE4\xDFer Entsorgung k\xF6nnten sch\xE4dliche Schwermetalle freigesetzt
-      werden, die die Umwelt belasten. Um Umweltauswirkungen zu minimieren, ist eine
-      verantwortungsvolle Entsorgung und das Recycling von Elektronikabf\xE4llen
-      notwendig."
+    itemInformation: "Uhrmacher haben eine kreative Praxis des \"Upcyclings\" begonnen,
+      bei der sie alte Armbanduhren recyceln und die Komponenten in v\xF6llig neuen
+      Designs wiederverwenden. Das Ergebnis sind einzigartige und individuelle Zeitmesser,
+      die nicht nur stilvoll sind, sondern auch umweltfreundlich, denn durch Upcycling
+      werden alte Uhren zu wertvollen Kunstwerken, die die Bedeutung von Nachhaltigkeit
+      und Handwerkskunst betonen."
     imageName: uhr
-    itemQuestion: 
-    itemAnswers: []
+    itemQuestion: Was passiert beim "Upcycling" von alten Armbanduhren?
+    itemAnswers:
+    - Neue und einzigartige Designs entstehen.
+    - Die Uhren werden weggeworfen.
+    - Die Uhren werden nicht weiterverwendet.
   - itemName: Grafikkarte
     isCollected: 0
     itemHint:
     - Ich bin blau
     - "So cool wie ich sind keine K\xFChler mehr"
-    itemInformation: "Grafikkarten verbrauchen w\xE4hrend des Betriebs erhebliche
-      Energie, insbesondere bei hochleistungsf\xE4higen Modellen. Ein energieeffizientes
-      Design und die Nutzung erneuerbarer Energien k\xF6nnen dazu beitragen, den
-      Stromverbrauch zu reduzieren und die Umweltauswirkungen zu minimieren."
+    itemInformation: "Beim Recycling alter Grafikkarten werden wertvolle Metalle
+      wie Gold, Silber und Kupfer gewonnen, die in neuen Elektronikger\xE4ten wiederverwendet
+      werden k\xF6nnen. Deine recycelten Grafikkarten leisten also nicht nur Umweltschutz,
+      sondern tragen auch dazu bei, dass zuk\xFCnftige Elektronik nachhaltiger und
+      ressourcenschonender wird!"
     imageName: grafikkarte
-    itemQuestion: 
-    itemAnswers: []
+    itemQuestion: Was bewirkt das Recycling alter Grafikkarten?
+    itemAnswers:
+    - "Wiederverwendung wertvoller Metalle f\xFCr neue Elektronikger\xE4te."
+    - Keine Auswirkungen auf die Umwelt.
+    - Mehr Elektroschrott durch wegwerfen.
   currentItem:
     itemName: 
     isCollected: 0
