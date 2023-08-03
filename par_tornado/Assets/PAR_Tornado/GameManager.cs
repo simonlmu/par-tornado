@@ -121,6 +121,10 @@ public class GameManager : MonoBehaviour
 
                 break;
 
+            case GameState.Quiz:
+                // show the quiz
+                break;
+            
             case GameState.End:
                 // stop the timer
                 StopTimer();
@@ -168,6 +172,18 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Round number is " + roundNumer);
         return roundNumer;
+    }
+
+    public List<Item> returnFoundItems(){
+        List<Item> foundItems = new List<Item>();
+        foreach (Item item in itemsList)
+        {
+            if (item.isCollected)
+            {
+                foundItems.Add(item);
+            }
+        }
+        return foundItems;
     }
 
     // function to return unfound items
@@ -270,7 +286,8 @@ public enum GameState
         Start,
         Menu,
         Gameplay,
-        End        
+        End,
+        Quiz
     }
 
 // Defining Item class
