@@ -166,7 +166,6 @@ public class GameManager : MonoBehaviour
 
     public int getRoundNumber()
     {
-        Debug.Log("Round number is " + roundNumer);
         return roundNumer;
     }
 

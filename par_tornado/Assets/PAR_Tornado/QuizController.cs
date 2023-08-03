@@ -13,6 +13,8 @@ public class QuizController : MonoBehaviour
     private string userAnswer;
 
     [SerializeField] 
+    private TMP_Text question;
+    [SerializeField] 
     private TMP_Text button;
     [SerializeField] 
     private TMP_Text button1;
@@ -28,9 +30,27 @@ public class QuizController : MonoBehaviour
     {
         itemsList = gameManager.returnUnfoundItems();
         // itemsList = gameManager.returnFoundItems();
-        button.text = itemsList[roundNumber].itemInformation;
-        button1.text = itemsList[roundNumber].itemInformation;
-        button2.text = itemsList[roundNumber].itemInformation;
+
+        var options = itemsList[roundNumber].itemAnswers;
+        ShuffleList(options);
+
+        question.text = itemsList[roundNumber].itemQuestion;
+        button.text = options[0];
+        button1.text = options[1];
+        button2.text = options[2];
+
+        correctAnswer = options[0];
+    }
+
+    public void ShuffleList(List<string> list)
+    {
+        for (int i = 0; i < list.Count; i++)
+        {
+            string temp = list[i];
+            int randomIndex = Random.Range(i, list.Count);
+            list[i] = list[randomIndex];
+            list[randomIndex] = temp;
+        }
     }
 
     public void option1()

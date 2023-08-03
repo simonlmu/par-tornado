@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731716, g: 0.13414738, b: 0.121078566, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -750,7 +750,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 70
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2122,6 +2122,140 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &677038664
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2798027722609676529, guid: 42e117e60edff4abe903b7bbaeb89ecb,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2798027722609676529, guid: 42e117e60edff4abe903b7bbaeb89ecb,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2798027722609676529, guid: 42e117e60edff4abe903b7bbaeb89ecb,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2798027724138910029, guid: 42e117e60edff4abe903b7bbaeb89ecb,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2798027724138910029, guid: 42e117e60edff4abe903b7bbaeb89ecb,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2798027724138910029, guid: 42e117e60edff4abe903b7bbaeb89ecb,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2798027724138910029, guid: 42e117e60edff4abe903b7bbaeb89ecb,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2798027724138910029, guid: 42e117e60edff4abe903b7bbaeb89ecb,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2798027724138910029, guid: 42e117e60edff4abe903b7bbaeb89ecb,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2798027724138910029, guid: 42e117e60edff4abe903b7bbaeb89ecb,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2798027724138910029, guid: 42e117e60edff4abe903b7bbaeb89ecb,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2798027724138910029, guid: 42e117e60edff4abe903b7bbaeb89ecb,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2798027724138910029, guid: 42e117e60edff4abe903b7bbaeb89ecb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2798027724138910029, guid: 42e117e60edff4abe903b7bbaeb89ecb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2798027724138910029, guid: 42e117e60edff4abe903b7bbaeb89ecb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2798027724138910029, guid: 42e117e60edff4abe903b7bbaeb89ecb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2798027724138910029, guid: 42e117e60edff4abe903b7bbaeb89ecb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2798027724138910029, guid: 42e117e60edff4abe903b7bbaeb89ecb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2798027724138910029, guid: 42e117e60edff4abe903b7bbaeb89ecb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2798027724138910029, guid: 42e117e60edff4abe903b7bbaeb89ecb,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2798027724138910029, guid: 42e117e60edff4abe903b7bbaeb89ecb,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2798027724138910029, guid: 42e117e60edff4abe903b7bbaeb89ecb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2798027724138910029, guid: 42e117e60edff4abe903b7bbaeb89ecb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2798027724138910029, guid: 42e117e60edff4abe903b7bbaeb89ecb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2798027724138910129, guid: 42e117e60edff4abe903b7bbaeb89ecb,
+        type: 3}
+      propertyPath: m_Name
+      value: QuizCanvas
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 42e117e60edff4abe903b7bbaeb89ecb, type: 3}
 --- !u!1 &699718876
 GameObject:
   m_ObjectHideFlags: 0
@@ -4128,6 +4262,11 @@ MonoBehaviour:
       mit erheblichen Umweltauswirkungen begleiten, einschlie\xDFlich der Entstehung
       giftiger Abf\xE4lle und der Beeintr\xE4chtigung von \xD6kosystemen."
     imageName: chip
+    itemQuestion: Chip?
+    itemAnswers:
+    - Chip!
+    - Chip!!
+    - Chip!!!
   - itemName: Kinder Klavier
     isCollected: 0
     itemHint:
@@ -4140,6 +4279,8 @@ MonoBehaviour:
       abbaubar ist. Umweltbewusstes Recycling und die Verwendung von recyceltem Kunststoff
       k\xF6nnten die Umweltauswirkungen verringern."
     imageName: klavier
+    itemQuestion: 
+    itemAnswers: []
   - itemName: Tastenhandy
     isCollected: 0
     itemHint:
@@ -4153,6 +4294,8 @@ MonoBehaviour:
       darstellt. Recyceln und umweltgerechte Entsorgung sind daher wichtig, um die
       Umweltbelastung zu minimieren."
     imageName: nokia
+    itemQuestion: 
+    itemAnswers: []
   - itemName: Fahrradlicht
     isCollected: 0
     itemHint:
@@ -4163,6 +4306,8 @@ MonoBehaviour:
       Allerdings stammen viele Kunststoffe aus nicht erneuerbaren Rohstoffen wie
       Erd\xF6l, was zu einem erh\xF6hten \xF6kologischen Fu\xDFabdruck f\xFChrt."
     imageName: licht
+    itemQuestion: 
+    itemAnswers: []
   - itemName: Armbanduhr
     isCollected: 0
     itemHint:
@@ -4176,6 +4321,8 @@ MonoBehaviour:
       verantwortungsvolle Entsorgung und das Recycling von Elektronikabf\xE4llen
       notwendig."
     imageName: uhr
+    itemQuestion: 
+    itemAnswers: []
   - itemName: Grafikkarte
     isCollected: 0
     itemHint:
@@ -4186,12 +4333,16 @@ MonoBehaviour:
       Design und die Nutzung erneuerbarer Energien k\xF6nnen dazu beitragen, den
       Stromverbrauch zu reduzieren und die Umweltauswirkungen zu minimieren."
     imageName: grafikkarte
+    itemQuestion: 
+    itemAnswers: []
   currentItem:
     itemName: 
     isCollected: 0
     itemHint: []
     itemInformation: 
     imageName: 
+    itemQuestion: 
+    itemAnswers: []
   _hints: {fileID: 13168225}
 --- !u!4 &1627623790
 Transform:
