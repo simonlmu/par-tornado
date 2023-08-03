@@ -3,35 +3,19 @@ using UnityEngine.UI;
 using TMPro;
 
 public class EndCanvasController : MonoBehaviour
-{/* 
-    public GameObject endCanvas;
-    public GameManager gameManager;
+{
+    private GameManager gameManager;
+
+    [SerializeField]
+    private TMP_Text scoreText;
 
     private void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
     }
 
-    // function to call ShowEndCanvas, when gameManager tells to do so
-    private void Update(){
-        var currentState = gameManager.getCurrentState();
-        if (currentState == GameState.End)
-        {
-            ShowEndCanvas();
-        }
-        
-    }
-
-    public void ShowEndCanvas()
+    private void OnEnable()
     {
-       
+        scoreText.text = "Du hast " + gameManager.getQuizScore() + "/3 Fragen richtig beantwortet." ;
     }
-
-    public void HideEndCaanvas()
-    {
-        if(endCanvas != null)
-        {
-            endCanvas.SetActive(false);
-        }
-    } */
 }
