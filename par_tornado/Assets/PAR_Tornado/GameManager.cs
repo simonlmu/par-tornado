@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     private float timeLimit = 60f;
     private int hints = 1;
 
+    private int roundNumer = 0;
+
     // End canvas for end screen
     [SerializeField]
     public GameObject endCanvas;
@@ -124,6 +126,8 @@ public class GameManager : MonoBehaviour
                 StopTimer();
                 // show our end screen
                 showEndScreen();
+                // set round number to 1
+                roundNumer = 1;
                 break;
 
             default:
@@ -156,9 +160,16 @@ public class GameManager : MonoBehaviour
     public void itemFound(string itemName)
     {
         setItemStatus(itemName, true);
+        // increase round number
+        roundNumer++;
     }
 
-    
+    public int getRoundNumber()
+    {
+        Debug.Log("Round number is " + roundNumer);
+        return roundNumer;
+    }
+
     // function to return unfound items
     public List<Item> returnUnfoundItems(){
         List<Item> unfoundItems = new List<Item>();
