@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
 {
     private float timer = 0f;
     private bool isTimerRunning = false;
+
     private float timeLimit = 60f;
     private int hints = 1;
 
@@ -172,6 +173,11 @@ public class GameManager : MonoBehaviour
             {
                 foundItems.Add(item);
             }
+        }
+        // first time of playing, start the timer
+        if (foundItems.Count == 0)
+        {
+            isTimerRunning = true;
         }
         // now we have a list of unfound items and a list of found items
         // wenn alle gefunden wurden oder Alternative: wenn 5 Items gefunden wurden

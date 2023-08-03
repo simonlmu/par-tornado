@@ -2,32 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class txtTimerController : MonoBehaviour
 {
-    public GameObject textGO2;
-
-    private Text timerText;
-
-    private float elapsedTime = 0f;
+    [SerializeField] 
+    private TMP_Text _infoText;
     
-    public GameManager gameManager;
+    private GameManager gameManager;
 
 private void Awake()
-    {
-        GameObject textGO = textGO2;
-        timerText = textGO.GetComponent<Text>();
-        gameManager = FindObjectOfType<GameManager>();
- 
+    {            
+        gameManager = FindObjectOfType<GameManager>().GetComponent<GameManager>();
+
+        if (_infoText != null){
+            _infoText.text = FormatTime(gameManager.getElapsedTime());
+        }
+        else {
+            Debug.LogWarning("_infoText is null.");
+        }
+         
     }
 
-   private void Start()
+   private void Update()
     {
         // Find the Text component attached to the UI Text object.
         // timerText = GetComponent<Text>();
-        elapsedTime = gameManager.getElapsedTime();
-        timerText.text = FormatTime(elapsedTime);
-        Debug.Log("The elapsed time is " + timerText.text);
+        // elapsedTime = gameManager.getElapsedTime();
+        // Debug.Log("The elapsed time is " + timerText.text);
     }
 
     private string FormatTime(float timeInSeconds)
@@ -35,7 +37,6 @@ private void Awake()
         // Convert the time in seconds to a formatted string (e.g., "00:00.00").
         int minutes = Mathf.FloorToInt(timeInSeconds / 60f);
         int seconds = Mathf.FloorToInt(timeInSeconds % 60f);
-        int milliseconds = Mathf.FloorToInt((timeInSeconds * 100f) % 100f);
-        return string.Format("{0:00}:{1:00}.{2:00}", minutes, seconds, milliseconds);
+        return string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 }
