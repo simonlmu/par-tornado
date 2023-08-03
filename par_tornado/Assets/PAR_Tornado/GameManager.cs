@@ -264,10 +264,12 @@ public class Item
     public bool isCollected;
     public List<string> itemHint;
     public string itemInformation;
+    public string imageName;
 
-    public Item(string name, bool collected, List<string> hint, string info)
+    public Item(string name, bool collected, List<string> hint, string info, string image)
     {
         this.itemName = name;
+        this.imageName = image;
         this.isCollected = collected;
         this.itemHint = hint;
         this.itemInformation = info;

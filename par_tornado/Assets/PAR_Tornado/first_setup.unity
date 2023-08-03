@@ -3769,7 +3769,7 @@ MonoBehaviour:
   startCanvas: {fileID: 855011274}
   hintButton: {fileID: 1772345060}
   itemsList:
-  - itemName: chip
+  - itemName: Computer Chip
     isCollected: 0
     itemHint:
     - Ich bin golden
@@ -3780,7 +3780,8 @@ MonoBehaviour:
       sind. Diese Materialien werden jedoch aus Erdmineralien gewonnen, die den Abbauprozess
       mit erheblichen Umweltauswirkungen begleiten, einschlie\xDFlich der Entstehung
       giftiger Abf\xE4lle und der Beeintr\xE4chtigung von \xD6kosystemen."
-  - itemName: klavier
+    imageName: chip
+  - itemName: Kinder Klavier
     isCollected: 0
     itemHint:
     - 'So bunt wie ein Regenbogen '
@@ -3791,7 +3792,8 @@ MonoBehaviour:
       nicht-erneuerbaren Rohstoffen hergestellt wird und bei der Entsorgung schwer
       abbaubar ist. Umweltbewusstes Recycling und die Verwendung von recyceltem Kunststoff
       k\xF6nnten die Umweltauswirkungen verringern."
-  - itemName: nokia
+    imageName: klavier
+  - itemName: Tastenhandy
     isCollected: 0
     itemHint:
     - "Grau, schwarz und unzerst\xF6rbar"
@@ -3803,7 +3805,8 @@ MonoBehaviour:
       vorhanden sein, was bei unsachgem\xE4\xDFer Entsorgung eine Umweltbelastung
       darstellt. Recyceln und umweltgerechte Entsorgung sind daher wichtig, um die
       Umweltbelastung zu minimieren."
-  - itemName: licht
+    imageName: nokia
+  - itemName: Fahrradlicht
     isCollected: 0
     itemHint:
     - Ich bin schwarz und klar
@@ -3812,7 +3815,8 @@ MonoBehaviour:
       die eine kosteng\xFCnstige und leichte L\xF6sung f\xFCr die Beleuchtung bieten.
       Allerdings stammen viele Kunststoffe aus nicht erneuerbaren Rohstoffen wie
       Erd\xF6l, was zu einem erh\xF6hten \xF6kologischen Fu\xDFabdruck f\xFChrt."
-  - itemName: uhr
+    imageName: licht
+  - itemName: Armbanduhr
     isCollected: 0
     itemHint:
     - 'Gold und Silber '
@@ -3824,7 +3828,8 @@ MonoBehaviour:
       werden, die die Umwelt belasten. Um Umweltauswirkungen zu minimieren, ist eine
       verantwortungsvolle Entsorgung und das Recycling von Elektronikabf\xE4llen
       notwendig."
-  - itemName: grafikkarte
+    imageName: uhr
+  - itemName: Grafikkarte
     isCollected: 0
     itemHint:
     - Ich bin blau
@@ -3833,11 +3838,13 @@ MonoBehaviour:
       Energie, insbesondere bei hochleistungsf\xE4higen Modellen. Ein energieeffizientes
       Design und die Nutzung erneuerbarer Energien k\xF6nnen dazu beitragen, den
       Stromverbrauch zu reduzieren und die Umweltauswirkungen zu minimieren."
+    imageName: grafikkarte
   currentItem:
     itemName: 
     isCollected: 0
     itemHint: []
     itemInformation: 
+    imageName: 
   _hints: {fileID: 13168225}
 --- !u!4 &1627623790
 Transform:
