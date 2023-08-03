@@ -20,7 +20,9 @@ public class InfoCardController : MonoBehaviour
         {
             modalPanel.SetActive(false);
         }
-        gameManager.SetGameState(GameState.Gameplay);
+        if (!gameManager.getCurrentState().Equals(GameState.Gameplay) ){
+            gameManager.SetGameState(GameState.Gameplay);
+        }
         if(hintPanel != null)
         {
             hintPanel.SetActive(true);

@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     private float timer = 0f;
     private bool isTimerRunning = false;
     private float timeLimit = 60f;
+    private int hints = 1;
 
     // End canvas for end screen
     [SerializeField]
@@ -20,6 +21,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     public GameObject startCanvas;
+
+    [SerializeField]
+    public GameObject hintButton;
     
     public static GameManager instance;
     // initialize gameState , set it to menu
@@ -86,11 +90,11 @@ public class GameManager : MonoBehaviour
         {
             case GameState.Start:
                 // show the start screen
-                if(startCanvas != null)
-                {
-                    startCanvas.SetActive(true);
-                    Debug.Log("Start Screen is active");
-                }
+                // if(startCanvas != null)
+                // {
+                //     startCanvas.SetActive(true);
+                //     Debug.Log("Start Screen is active");
+                // }
                 break;
 
             case GameState.Menu:
@@ -108,7 +112,9 @@ public class GameManager : MonoBehaviour
                 // if not all items have been found
                 // chose an item randomly from these
                 currentItem = chooseRandomItem(unfoundItems);
-                setHints("• " + string.Join(Environment.NewLine + "• ", currentItem.itemHint));
+                hints = 1;
+                hintButton.SetActive(true);
+                setHints();
 
                 break;
 
@@ -199,8 +205,28 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void setHints(string text)
+    public void addHint()
     {
+        if(hints > currentItem.itemHint.Count)
+        {
+            return;
+        }
+        hints++;
+        if(hints == currentItem.itemHint.Count)
+        {
+            hintButton.SetActive(false);
+        }
+        setHints();
+    }
+
+    public void setHints()
+    {
+        if (currentItem == null || currentItem.itemHint == null)
+        {
+            return;
+        }
+        var text = "• " + string.Join(Environment.NewLine + "• ", currentItem.itemHint.GetRange(0, hints));
+        
         if(_hints != null)
         {
             _hints.text = text;
