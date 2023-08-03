@@ -28,20 +28,41 @@ public class QuizController : MonoBehaviour
 
     public void OnEnable()
     {
-        itemsList = gameManager.returnUnfoundItems();
-        // itemsList = gameManager.returnFoundItems();
+        itemsList = gameManager.returnFoundItems();
+        
+        setQuestion(itemsList[roundNumber]);
+    }
 
-        var options = itemsList[roundNumber].itemAnswers;
+    public void setQuestion(Item item)
+    {
+        var options = item.itemAnswers;
+        correctAnswer = options[0];
+
         ShuffleList(options);
-
-        question.text = itemsList[roundNumber].itemQuestion;
+        question.text = item.itemQuestion;
         button.text = options[0];
         button1.text = options[1];
         button2.text = options[2];
-
-        correctAnswer = options[0];
     }
 
+    public void checkAnswer()
+    {
+        if (userAnswer == correctAnswer)
+        {
+            score++;
+            gameManager.setQuizScore(score);
+        }
+        roundNumber++;
+        if (roundNumber < itemsList.Count)
+        {
+            setQuestion(itemsList[roundNumber]);
+        }
+        else
+        {
+            gameManager.SetGameState(GameState.End);
+        }
+    }
+    
     public void ShuffleList(List<string> list)
     {
         for (int i = 0; i < list.Count; i++)
@@ -69,25 +90,5 @@ public class QuizController : MonoBehaviour
     {
         userAnswer = button2.text;
         checkAnswer();
-    }
-
-    public void checkAnswer()
-    {
-        if (userAnswer == correctAnswer)
-        {
-            score++;
-            Debug.Log("Correct");
-        }
-        roundNumber++;
-        if (roundNumber < itemsList.Count)
-        {
-            button.text = itemsList[roundNumber].itemInformation;
-            button1.text = itemsList[roundNumber].itemInformation;
-            button2.text = itemsList[roundNumber].itemInformation;
-        }
-        else
-        {
-            gameManager.SetGameState(GameState.End);
-        }
     }
 }

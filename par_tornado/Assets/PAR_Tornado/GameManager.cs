@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     private float timeLimit = 60f;
     private int hints = 1;
 
+    private int quizScore = 0;
+
     private int roundNumer = 0;
 
     // End canvas for end screen
@@ -169,6 +171,18 @@ public class GameManager : MonoBehaviour
         return roundNumer;
     }
 
+    public List<Item> returnFoundItems(){
+        List<Item> foundItems = new List<Item>();
+        foreach (Item item in itemsList)
+        {
+            if (item.isCollected)
+            {
+                foundItems.Add(item);
+            }
+        }
+        return foundItems;
+    }
+
     // function to return unfound items
     public List<Item> returnUnfoundItems(){
         List<Item> unfoundItems = new List<Item>();
@@ -259,6 +273,15 @@ public class GameManager : MonoBehaviour
         return currentState;
     }
     
+    public int getQuizScore()
+    {
+        return quizScore;
+    }
+
+    public void setQuizScore(int score)
+    {
+        quizScore = score;
+    }
 }
 
 
