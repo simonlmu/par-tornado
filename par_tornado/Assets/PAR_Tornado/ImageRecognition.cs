@@ -11,7 +11,7 @@ public class ImageRecognition : MonoBehaviour
     private readonly Dictionary<string, GameObject> _arPrefabDict = new Dictionary<string, GameObject>();
 
     public GameObject infoBoxPrefab; // Reference to your AR info box prefab
-    public GameObject infoModal; 
+    public GameObject infoModal;
 
     private GameManager gameManager;
 
