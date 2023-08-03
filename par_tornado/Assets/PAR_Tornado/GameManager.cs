@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,14 +24,6 @@ public class GameManager : MonoBehaviour
     // add items to the list
     private void Awake(){
         instance = this;
-
-        itemsList.Add(new Item("chip", false, "Ich bin golden, ...", "Der Computerchip besteht ..."));
-        itemsList.Add(new Item("licht", false, "Ich bin schwarz und leuchte ... ", "Das einfache Fahrradlicht besteht..."));
-        itemsList.Add(new Item("grafikkarte", false, "Ich bin ein Teil des Computers, ...", "Die Grafikkarte ist ein Teil des Computers, ..."));
-        itemsList.Add(new Item("klavier", false, "Ich bin ein Spielzeug, ...", "Das Kinder Klavier ist ein Spielzeug, ..."));
-        itemsList.Add(new Item("nokia", false, "Ich bin ein elektronisches Gerät, ...", "Das Handy ist ein elektronisches Gerät, ..."));
-        itemsList.Add(new Item("uhr", false, "Ich bin ein Accessoire, ...", "Die Armbanduhr ist ein Accessoire, ..."));
-        // ... 
     }
 
     // function to get the full items' list
@@ -64,7 +57,7 @@ public class GameManager : MonoBehaviour
                 // if not all items have been found
                 // chose an item randomly from these
                 currentItem = chooseRandomItem(unfoundItems);
-                setHints(currentItem.itemHint);
+                setHints("• " + string.Join(Environment.NewLine + "• ", currentItem.itemHint));
 
                 break;
 
@@ -167,10 +160,10 @@ public class Item
 {
     public string itemName;
     public bool isCollected;
-    public string itemHint;
+    public List<string> itemHint;
     public string itemInformation;
 
-    public Item(string name, bool collected, string hint, string info)
+    public Item(string name, bool collected, List<string> hint, string info)
     {
         this.itemName = name;
         this.isCollected = collected;
