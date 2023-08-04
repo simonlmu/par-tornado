@@ -36,7 +36,12 @@ public class GameManager : MonoBehaviour
     public GameObject hintButton;
     [SerializeField]
     public GameObject hintPanel;
-    
+
+    [SerializeField]
+    public GameObject note_found;
+    public GameObject infoModal; 
+    public GameObject particlesScript;
+
     public static GameManager instance;
     // initialize gameState , set it to menu
     private GameState currentState = GameState.Start;
@@ -65,6 +70,19 @@ public class GameManager : MonoBehaviour
     // function to get the full items' list
     public List<Item> GetItemsList(){
         return itemsList;
+    }
+
+       private System.Collections.IEnumerator showNotefor2Seconds()
+    {
+        note_found.SetActive(true);
+   //     particlesScript.PlayCelebrationEffect();
+
+        // Wait for 2 seconds
+        yield return new WaitForSeconds(2f);
+
+        // Deactivate the canvas
+        note_found.SetActive(false);
+        infoModal.SetActive(true);
     }
 
     // Start is called before the first frame update
@@ -203,6 +221,7 @@ public class GameManager : MonoBehaviour
         setItemStatus(itemName, true);
         // increase round number
         roundNumer++;
+        StartCoroutine(showNotefor2Seconds());
     }
 
     public int getRoundNumber()

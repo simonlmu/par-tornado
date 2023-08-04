@@ -31,15 +31,19 @@ public class ImageRecognition : MonoBehaviour
         _arTrackedImageManager.trackedImagesChanged -= OnImageChanged;
     }
 
+    private bool isCoRoutineFinished = false;
+
     public void OnImageChanged(ARTrackedImagesChangedEventArgs args)
     {
         foreach (var trackedImage in args.added)
         {
+            
             var imageName = trackedImage.referenceImage.name;
             var currentItem = gameManager.getCurrentItem();
             if (!_arPrefabDict.ContainsKey(imageName) && currentItem != null && currentItem.imageName == imageName) {
 
-                infoModal.SetActive(true);
+               // infoModal.SetActive(true);
+             
                 var infoModalController = infoModal.GetComponent<InfoBoxController>();
                 infoModalController.SetInfoTitle(currentItem.itemInformation);
 
